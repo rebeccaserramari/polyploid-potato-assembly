@@ -1,0 +1,67 @@
+import sys
+from collections import defaultdict
+
+covfile = sys.argv[1]
+outfile = sys.argv[2]
+covdict = defaultdict(list)
+
+nodefile = sys.argv[3]
+
+#covdict = dict()
+#component37
+#old_nodes = {'utg014521l','utg010354l','utg001878l','utg005150l','utg011035l','utg006128l','utg012315l','utg011023l','utg005552l','utg011809l','utg012597l','utg002648l','utg006474l','utg005772l','utg001617l','utg001581l','utg008602l','utg004283l','utg005592l','utg010332l','utg007931l','utg007920l','utg013609l','utg007290l','utg005007l','utg006043l','utg010580l','utg010025l','utg002816l','utg014615l','utg014468l','utg009884l','utg006538l','utg008379l','utg007874l','utg002693l','utg004464l','utg002139l','utg002517l','utg015112l','utg000411l','utg005304l','utg005645l','utg004725l','utg012477l','utg007061l','utg008225l','utg005911l','utg004247l','utg009059l','utg009839l','utg002009l','utg005346l','utg010431l','utg004088l','utg007274l','utg011538l','utg003571l','utg017955l','utg007566l','utg000719l','utg008557l','utg003946l','utg005786l','utg005694l','utg011634l','utg002827l','utg003554l','utg008182l','utg006131l','utg010269l','utg007317l','utg009336l','utg002314l','utg003826l','utg011422l','utg004244l','utg010498l','utg000083l','utg001049l','utg010319l','utg011416l','utg009267l','utg009574l','utg006283l','utg001340l','utg007554l','utg004930l','utg008802l','utg000476l','utg000814l','utg011080l','utg000905l','utg007535l','utg007322l','utg001787l','utg004592l','utg019666l','utg014841l','utg002109l','utg010502l','utg006687l','utg012879l','utg002035l','utg013488l','utg002367l','utg000490l','utg017082l','utg006300l','utg009970l','utg012068l','utg015828l','utg007788l','utg006733l','utg011874l','utg003922l','utg005375l','utg000701l','utg005022l','utg010053l','utg009174l','utg002526l','utg018528l','utg011400l','utg002379l','utg003936l','utg008368l','utg010988l','utg007113l','utg011726l','utg002676l','utg011109l','utg018224l','utg003332l','utg006188l','utg013943l','utg006150l','utg016445l','utg006890l','utg016183l','utg000419l','utg001866l','utg010535l','utg001035l','utg006173l','utg014129l','utg002992l','utg013363l','utg012194l','utg001849l','utg008960l','utg003056l','utg013526l','utg004334l','utg007324l','utg007211l','utg005952l','utg009188l','utg000780l','utg004874l','utg011866l','utg004720l','utg005840l','utg015732l','utg009178l','utg005710l','utg006555l','utg004857l','utg008685l','utg003139l','utg009808l','utg005521l','utg006064l','utg003264l','utg006184l','utg001159l','utg004248l','utg013659l','utg006346l','utg017249l','utg006145l','utg008200l','utg003388l','utg006057l','utg004688l','utg008306l','utg012927l','utg004563l','utg007587l','utg006856l','utg010850l','utg009189l','utg004847l','utg002778l','utg003732l','utg004476l','utg007994l','utg004716l','utg003779l','utg003392l','utg003456l','utg001484l','utg011571l','utg007160l','utg017694l','utg008235l','utg006905l','utg005800l','utg005053l','utg002875l','utg001373l','utg013617l','utg014483l','utg006732l','utg015485l'}
+
+#component37, also nodes which are not in the kmercount file (w/o unique kmers)
+#new_nodes = {'utg006188l', 'utg017694l', 'utg017683l', 'utg015067l', 'utg005911l', 'utg009970l', 'utg004716l', 'utg006474l', 'utg017037l', 'utg013694l', 'utg009017l', 'utg013074l', 'utg005772l', 'utg007757l', 'utg009008l', 'utg006890l', 'utg006128l', 'utg007667l', 'utg011416l', 'utg001849l', 'utg018704l', 'utg018175l', 'utg002507l', 'utg012927l', 'utg015308l', 'utg017392l', 'utg018783l', 'utg013526l', 'utg019596l', 'utg010498l', 'utg004688l', 'utg001878l', 'utg009649l', 'utg019286l', 'utg001787l', 'utg005643l', 'utg006687l', 'utg018874l', 'utg010332l', 'utg019691l', 'utg018070l', 'utg000905l', 'utg014483l', 'utg019648l', 'utg003936l', 'utg006538l', 'utg015026l', 'utg003596l', 'utg013789l', 'utg008802l', 'utg007420l', 'utg008182l', 'utg004088l', 'utg013609l', 'utg007994l', 'utg004563l', 'utg012879l', 'utg010725l', 'utg002139l', 'utg005346l', 'utg007874l', 'utg007566l', 'utg004244l', 'utg004476l', 'utg010502l', 'utg016063l', 'utg009574l', 'utg004874l', 'utg012094l', 'utg011678l', 'utg004646l', 'utg019196l', 'utg000490l', 'utg008379l', 'utg011571l', 'utg009188l', 'utg001049l', 'utg006145l', 'utg019666l', 'utg013157l', 'utg005800l', 'utg011035l', 'utg009808l', 'utg018548l', 'utg002952l', 'utg014592l', 'utg004283l', 'utg017095l', 'utg007788l', 'utg006732l', 'utg000419l', 'utg013178l', 'utg005840l', 'utg011874l', 'utg012315l', 'utg005938l', 'utg014017l', 'utg014129l', 'utg006043l', 'utg004617l', 'utg005150l', 'utg007587l', 'utg004857l', 'utg008374l', 'utg003571l', 'utg005007l', 'utg007487l', 'utg001340l', 'utg006031l', 'utg016183l', 'utg005710l', 'utg003826l', 'utg012597l', 'utg013659l', 'utg019764l', 'utg005521l', 'utg007113l', 'utg013282l', 'utg010988l', 'utg008235l', 'utg014615l', 'utg002379l', 'utg010445l', 'utg001581l', 'utg007211l', 'utg014521l', 'utg004725l', 'utg011899l', 'utg007535l', 'utg011866l', 'utg009451l', 'utg003264l', 'utg017083l', 'utg014275l', 'utg017869l', 'utg013428l', 'utg003456l', 'utg002009l', 'utg011082l', 'utg011016l', 'utg012032l', 'utg004592l', 'utg006064l', 'utg010025l', 'utg004847l', 'utg004247l', 'utg003922l', 'utg014118l', 'utg010319l', 'utg018224l', 'utg008602l', 'utg007920l', 'utg006856l', 'utg000701l', 'utg002992l', 'utg017886l', 'utg006562l', 'utg002778l', 'utg002875l', 'utg001032l', 'utg016966l', 'utg004248l', 'utg011080l', 'utg019600l', 'utg006131l', 'utg018693l', 'utg011109l', 'utg004334l', 'utg008200l', 'utg001866l', 'utg010756l', 'utg006173l', 'utg006057l', 'utg007160l', 'utg017849l', 'utg010431l', 'utg016445l', 'utg014841l', 'utg011590l', 'utg000814l', 'utg001617l', 'utg018621l', 'utg001159l', 'utg017828l', 'utg000780l', 'utg007322l', 'utg017641l', 'utg006300l', 'utg014468l', 'utg019000l', 'utg019283l', 'utg011023l', 'utg008960l', 'utg009287l', 'utg012721l', 'utg018338l', 'utg005022l', 'utg008306l', 'utg002827l', 'utg002676l', 'utg018964l', 'utg008368l', 'utg010354l', 'utg019879l', 'utg018447l', 'utg009336l', 'utg011538l', 'utg016192l', 'utg013363l', 'utg002035l', 'utg015695l', 'utg004464l', 'utg015653l', 'utg014554l', 'utg006969l', 'utg010580l', 'utg003554l', 'utg018470l', 'utg005694l', 'utg002816l', 'utg007554l', 'utg002109l', 'utg018528l', 'utg000411l', 'utg002517l', 'utg009839l', 'utg001484l', 'utg012068l', 'utg016724l', 'utg009595l', 'utg003392l', 'utg001373l', 'utg008907l', 'utg011726l', 'utg008685l', 'utg018541l', 'utg011400l', 'utg007290l', 'utg010009l', 'utg000719l', 'utg007931l', 'utg013056l', 'utg015006l', 'utg003779l', 'utg011933l', 'utg000083l', 'utg004720l', 'utg015501l', 'utg006184l', 'utg014712l', 'utg006283l', 'utg019394l', 'utg011428l', 'utg017678l', 'utg008225l', 'utg013959l', 'utg009267l', 'utg007274l', 'utg005552l', 'utg006140l', 'utg010850l', 'utg015828l', 'utg010209l', 'utg011302l', 'utg009738l', 'utg013943l', 'utg017955l', 'utg011190l', 'utg012477l', 'utg009174l', 'utg010535l', 'utg007324l', 'utg010269l', 'utg003056l', 'utg013548l', 'utg015112l', 'utg016566l', 'utg007985l', 'utg005952l', 'utg005053l', 'utg005645l', 'utg017249l', 'utg008557l', 'utg006337l', 'utg007317l', 'utg015485l', 'utg018329l', 'utg018370l', 'utg002526l', 'utg008023l', 'utg009189l', 'utg017702l', 'utg015443l', 'utg015202l', 'utg013617l', 'utg018575l', 'utg002024l', 'utg003769l', 'utg010627l', 'utg003732l', 'utg006346l', 'utg018786l', 'utg003388l', 'utg009178l', 'utg003139l', 'utg003946l', 'utg005592l', 'utg002693l', 'utg003332l', 'utg002314l', 'utg012619l', 'utg004930l', 'utg005375l', 'utg005304l', 'utg006815l', 'utg008534l', 'utg011809l', 'utg007284l', 'utg002367l', 'utg013150l', 'utg011056l', 'utg011422l', 'utg005357l', 'utg017467l', 'utg000476l', 'utg006905l', 'utg010053l', 'utg017082l', 'utg015775l', 'utg007061l', 'utg009059l', 'utg013488l', 'utg015187l', 'utg001035l', 'utg010801l', 'utg002648l', 'utg009884l', 'utg006150l', 'utg006729l', 'utg019457l', 'utg012194l', 'utg011634l', 'utg017819l', 'utg015732l', 'utg014442l', 'utg005786l', 'utg006733l', 'utg006555l'}
+
+#relevant_nodes = new_nodes - old_nodes
+relevant_nodes = set()
+with open(nodefile) as nodef:
+	for i,line in enumerate(nodef):
+		relevant_nodes.add(line.strip())
+print("number of nodes: ", len(relevant_nodes))
+print("test node: ", list(relevant_nodes)[0])
+
+count = 0
+seen_nodes = set()
+with open(covfile) as f:
+	for i,line in enumerate(f):
+		parts = line.strip().split('\t')
+		node = parts[0]
+	#	if (node not in covdict):
+	#		print(node)
+	#	#	covdict[node] = 0
+	#	covdict[node].append(int(parts[2]))
+	#	if (node == "utg001000l"):
+	#		break
+		if (node in relevant_nodes):
+			if (node not in seen_nodes):
+				count += 1
+				print(count, ': ', node)
+			seen_nodes.add(node)
+			#covdict[node].append(int(parts[2]))
+			covdict[node].append(sum([int(parts[i]) for i in range(2,len(parts))]))
+
+avg_covdict = defaultdict(list)
+total_avg = dict()
+for node in covdict.keys():
+	if (len(covdict[node]) > 5000):
+		i = 5000
+		curr = 0
+		while i < len(covdict[node]):
+			frag = covdict[node][curr:i]
+			avg = float(sum(frag))/len(frag)
+			avg_covdict[node].append(avg)
+			curr = i
+			i += 5000
+		lastfrag = covdict[node][curr:]
+		lastavg = sum(lastfrag)/len(lastfrag)
+		avg_covdict[node].append(lastavg)
+	else:
+		avg = sum(covdict[node])/len(covdict[node])
+		avg_covdict[node].append(avg)
+	total_avg[node] = sum(covdict[node])/len(covdict[node])
+
+with open(outfile, 'w') as outf:
+	for node in avg_covdict.keys():
+		outf.write(node+'\t'+str(total_avg[node])+'\t'+str(len(covdict[node]))+'\t'+','.join([str(i) for i in avg_covdict[node]])+'\n')

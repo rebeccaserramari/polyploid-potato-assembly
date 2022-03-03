@@ -1,0 +1,32 @@
+configfile: "config_offspring.json"
+
+path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
+#lengths = {"1mb_2mb", "smaller1mb"}
+
+rule all:
+	input:
+		expand("../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt", sample=config['data']['samples'])
+
+
+#rule unzip:
+#	input:
+#		path+"{sample}_merged.fastq.gz"
+#	output:
+#		path+"{sample}_merged.fastq"
+#	shell:
+#		"gunzip {input}"
+		
+rule polyassembly:
+	input:
+		path+"{sample}_merged.fastq"
+	output:
+		"../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt"
+	threads: 24
+	params:
+		intermed = path+"{sample}_merged.fastq"
+	log:
+		"../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/logs/allnodes_{sample}_shortreadcounts_k71_bcalm.log"
+	shell:	
+		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/Polyassembly -g /gpfs/project/serramar/cproject/hifiasm_HG002_chr22.asm.r_utg.gfa -a /gpfs/project/serramar/cproject/chr22_ucsc_ONT_lt100kb-downsampled_to_hifiasm_HG002.gaf -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/allnodes_k71_unique_kmers_colIllum_bcalm.txt -c {output} |& tee {log}"
+		
+	
