@@ -1,0 +1,71 @@
+
+rule all:
+	input:
+		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+
+#align the sequencing reads to the unitigs
+rule align:
+	input: 
+		nodes = "spud_altus_hifiasm.r_utg.nodes.fasta",
+		sample1 = "m54336U_201108_053012.ccs.fastq.gz", 
+		sample2 = "m54336U_201109_115807.ccs.fastq.gz", 
+		sample3 = "m54336U_201126_080917.ccs.fastq.gz" 			
+	threads: 12	
+	log:
+		"altusccs_to_altusgfa.log"
+	output:
+		"altusccs_to_altusgfa.sam"
+	shell:
+		"/usr/bin/time -v minimap2 -ax asm20 -t{threads} {input.nodes} {input.sample1} {input.sample2} {input.sample3} -o {output} |& tee {log}"
+		
+#sort sam file and convert to bam:		
+rule sort_to_bam:		
+	input:
+		sam = "altusccs_to_altusgfa.sam"
+	output:
+		bam = "altusccs_to_altusgfa_sorted.bam"
+	shell:
+		"/usr/bin/time -v samtools view -@12 -bS {input.sam} | samtools sort -@12 - > {output.bam}; samtools index {output.bam};"
+		
+		
+#filter bam file for MAPQ
+rule filter:
+	input:
+		"altusccs_to_altusgfa_sorted.bam"
+	threads: 4
+	output:
+		"altusccs_to_altusgfa_sorted_filtered.bam"
+	shell:
+		"/usr/bin/time -v samtools view -@{threads} -bq 60 {input} > {output}; samtools index -@{threads} {output};"
+
+#compute sequencing depth:
+rule compute_depth:
+	input:
+		bed = "spud_altus_hifiasm.r_utg.unique_sequences.bed",
+		bams = "altusccs_to_altusgfa_sorted_filtered.bam",
+	output:
+		"altusccs_to_altus_filtered_unique_sequences.depth"	
+	shell:
+		"/usr/bin/time -v samtools depth -a -b {input.bed} -f {input.bams} -s -o {output}";
+
+#sum up depths per node & window:
+rule sum_depths:
+	input:
+		nodes = "spud_altus_hifiasm.r_utg.nodes",
+		depth = "altusccs_to_altus_filtered_unique_sequences.depth"
+	output:
+		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth"
+	shell:
+		"time python sum_node_cov_5kb.py {input.depth} {output} {input.nodes};"
+
+#write copy number output file
+rule plot_coverage:
+	input:
+		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth"
+	output:
+		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv" 
+	shell:
+		"python3 write_dosages.py {input} {output}"		
+
+
+		
