@@ -1,0 +1,51 @@
+
+rule all:
+	input:
+		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+
+#cluster the nodes into chromosomal clusters
+rule cluster:
+	input: 
+		path = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.components/",
+		dosagefile = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv",
+		graph = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.gfa",
+		kmercounts = "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv" 			
+	output:
+		"clustering.txt"
+	shell:
+		"/usr/bin/time python3 cluster_allnodes.py {input.path} {input.dosagefile} {input.graph} {input.kmercounts}"
+		
+#phase chromosome clusters into haplotypes		
+rule cluster_phasing:		
+	input:
+		gfapath = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.components/",
+		kmercounts = "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv",
+		dosage = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+	params:	
+		outpath = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222"
+	output:
+		
+	shell:
+		"/usr/bin/time -v python3 cluster_phasing.py {input.gfapath} {input.kmercounts} {params.outpath} {input.dosage}"
+		
+		
+#Todo: create colored nodes files		
+		
+#find graph traversals to assemble haplotigs
+rule thread:
+	input:
+		gfa = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.gfa",
+		colored_nodes = "readgroup_clusters/clusters_ch12_colors_h3.csv",
+		clusterfile = "readgroup_clusters/clusters_ch12_new_withunphased.tsv",
+	params:
+		write_output = False,
+		write_sequence = False	
+	log:
+		'readgroup_clusters/clusters_ch12_h3_new-`date +"%Y-%m-%d_%H-%M"`.log'
+	output:
+		
+	shell:
+		"/usr/bin/time -v python3 -u write_threaded_paths.py {input.gfa} {input.colored_nodes} {input.clusterfile} {params.write_output} {params.write_sequence} | tee {log}
+
+
+		

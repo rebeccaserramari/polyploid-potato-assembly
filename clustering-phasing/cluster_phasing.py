@@ -349,58 +349,14 @@ def merge_clusters(union_sets, neg_corr, pos_corr):
 	#	visited.add(x)
 	return(merged, visited)
 
-#indices_to_merge = [[3, 16, 22, 23, 59, 63, 85, 90, 102, 118, 175, 177, 206]]
-#singlenodes =  singletons = [['utg003443l', 'utg005132l', 'utg005927l', 'utg000428l', 'utg006912l', 'utg002559l', 'utg000509l', 'utg011993l', 'utg010078l', 'utg000416l', 'utg006226l', 'utg016459l', 'utg001938l', 'utg012503l', 'utg010155l', 'utg007053l', 'utg007114l']]
-#rg = ['ch09']
-
-#indices_to_merge = [[6, 9, 13, 43, 88, 115, 117, 154, 159, 172, 173]]
-#singlenodes = [['utg014961l', 'utg014782l', 'utg014154l', 'utg016845l', 'utg003691l', 'utg016896l', 'utg012891l', 'utg011195l', 'utg006552l', 'utg001880l', 'utg003558l', 'utg011990l', 'utg010789l', 'utg012732l', 'utg019238l', 'utg019189l', 'utg016599l', 'utg019428l', 'utg018234l', 'utg000444l', 'utg000019l', 'utg011708l', 'utg007707l', 'utg001908l', 'utg014822l', 'utg013608l', 'utg001290l', 'utg005633l', 'utg017116l', 'utg018035l', 'utg007528l', 'utg011207l', 'utg009803l', 'utg012089l', 'utg008367l', 'utg007249l']]
-#rg = ['ch03']
-
-#indices_to_merge = [[2, 4, 7, 17, 26, 38, 39, 45, 49, 66, 83, 87, 94, 95, 97, 98, 101, 104, 106, 107, 113, 119, 123, 127, 131, 134, 135, 137, 138, 141, 142, 147, 150, 151, 152, 153, 157, 163, 165, 189, 192, 198, 201]]
-#singlenodes = [['utg015925l', 'utg001014l', 'utg009123l', 'utg006440l', 'utg000434l', 'utg001774l', 'utg005817l', 'utg001152l', 'utg012255l', 'utg016897l', 'utg008840l']]
-#rg = ['ch04']
-
-#indices_to_merge = [[15, 30, 37, 47, 100, 183]]
-#singlenodes = [['utg013155l', 'utg002339l', 'utg017901l']]
-#rg = ['ch08']
-
-#indices_to_merge = [[11, 29, 40, 50, 52, 61, 105, 110, 133]]
-#singlenodes = [['utg017634l', 'utg007181l', 'utg014816l', 'utg009512l', 'utg001630l', 'utg000843l', 'utg017173l', 'utg015327l', 'utg013350l', 'utg000081l', 'utg002110l', 'utg000824l', 'utg003113l']]
-#rg = ['ch05']
- 
-#indices_to_merge = [[18, 56]]
-#singlenodes = [['utg012616l', 'utg009557l', 'utg017031l', 'utg002019l', 'utg002269l']]
-#rg = ['ch06']    
- 
-#indices_to_merge = [[5, 20, 31, 67, 72, 74, 80, 149, 162, 191]]
-#singlenodes = [['utg006878l', 'utg015358l', 'utg000282l', 'utg015928l', 'utg001518l', 'utg009301l', 'utg017192l', 'utg007146l', 'utg009443l', 'utg017375l', 'utg015872l', 'utg000431l', 'utg004009l', 'utg001960l', 'utg001502l', 'utg008371l', 'utg013903l', 'utg013270l', 'utg004012l', 'utg000840l']]
-#rg = ['ch07']
-
-#indices_to_merge = [[19, 32, 33, 34, 36, 42, 44, 54, 64, 73, 77, 78, 84, 91, 93, 96, 108, 114, 132, 140, 160, 167, 169, 185, 190, 194, 200]]
-#singlenodes = [['utg002937l', 'utg002474l', 'utg010747l', 'utg017657l', 'utg009236l', 'utg006399l', 'utg007565l', 'utg009931l', 'utg000120l', 'utg004470l', 'utg002233l', 'utg000439l', 'utg015404l', 'utg004502l', 'utg008745l', 'utg006261l', 'utg012359l', 'utg012495l', 'utg009852l', 'utg006362l', 'utg006270l', 'utg004916l', 'utg000455l', 'utg003285l', 'utg008652l', 'utg001527l', 'utg001257l', 'utg003010l', 'utg004331l', 'utg008055l', 'utg010169l', 'utg011792l', 'utg005249l', 'utg000060l', 'utg012604l', 'utg012109l', 'utg002177l', 'utg002494l', 'utg009022l', 'utg007914l']]
-#rg = ['ch01']
 
 indices_to_merge = [[8, 21, 57, 60, 68, 103, 111]]
-singlenodes = ['utg018065l', 'utg019760l', 'utg019310l', 'utg017238l', 'utg010961l', 'utg009403l', 'utg001713l', 'utg002523l']
+singlenodes = [['utg018065l', 'utg019760l', 'utg019310l', 'utg017238l', 'utg010961l', 'utg009403l', 'utg001713l', 'utg002523l']]
 rg = ['ch10']
 
-#indices_to_merge = [[1, 12, 24, 35, 41, 53, 62, 65, 70, 79, 82, 89]]
-#singlenodes = [['utg009919l', 'utg000588l', 'utg009242l', 'utg002803l', 'utg003108l', 'utg002442l', 'utg001239l', 'utg001037l', 'utg007560l', 'utg003416l', 'utg003107l', 'utg010245l', 'utg001863l', 'utg003950l']]
-#rg = ['ch11']
-
-#indices_to_merge = [[8, 14, 27, 51, 55, 81, 92, 99, 126, 161, 186]]
-#singlenodes = [['utg001854l', 'utg007538l', 'utg002239l', 'utg013231l', 'utg006475l', 'utg005734l', 'utg015144l', 'utg018286l', 'utg013781l', 'utg007561l', 'utg005822l', 'utg003505l', 'utg002487l', 'utg017515l', 'utg016159l', 'utg016006l', 'utg000696l', 'utg017599l', 'utg016319l', 'utg017743l', 'utg000103l', 'utg008703l', 'utg018397l', 'utg014366l', 'utg001929l', 'utg008186l']]
-#rg = ['ch12']
-
-#indices_to_merge = [[10, 31, 48, 58, 69, 71, 76, 109, 120, 139, 164, 207]]
-#singlenodes = [['utg015800l', 'utg011606l', 'utg017381l', 'utg012407l', 'utg008651l', 'utg000141l', 'utg012543l', 'utg010108l', 'utg010554l', 'utg004900l', 'utg018167l', 'utg018562l', 'utg016239l', 'utg018825l', 'utg000494l', 'utg015570l', 'utg014989l', 'utg015397l', 'utg008781l', 'utg009710l', 'utg017474l', 'utg006400l', 'utg011567l', 'utg015979l', 'utg013853l', 'utg003928l', 'utg007282l', 'utg009925l', 'utg003995l', 'utg002067l', 'utg000539l', 'utg001759l', 'utg008002l', 'utg007469l', 'utg007476l', 'utg002343l', 'utg010048l', 'utg014831l', 'utg013149l', 'utg002232l', 'utg011683l', 'utg000376l', 'utg002017l', 'utg018995l', 'utg014091l', 'utg005937l', 'utg000873l', 'utg011791l']]
-#rg = ['ch02']
-
-#clusterpath = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/k71/components_clusters_bcalm/"
-gfapath = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.components/"
-wholedosagefile =  "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv"
-outpath =  "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222"
+gfapath = sys.argv[1]
+kmercountfile =  sys.argv[2]
+outpath =  sys.argv[3]
 cutoff = 0.1
 if outpath[-1] != '/':
 	outpath += '/'
@@ -443,8 +399,8 @@ for rg_index in range(len(indices_to_merge)):
 	outfile = outpath + 'shortreadcounts_k71_bcalm_filtered_0.1_RG'+str(readgroup)+'.tsv'
 	nodes_in_countfile = 0
 	with open(outfile, 'w') as outf:
-		with open(wholedosagefile) as dosage:
-				for i,l in enumerate(dosage):
+		with open(kmercountfile) as kmercounts:
+				for i,l in enumerate(kmercounts):
 					parts = l.strip().split('\t')
 					if i == 0:
 						outf.write(l)                        
@@ -468,7 +424,7 @@ print("computing correlation")
 corrtable = norm_t.corr(method='spearman')
 print("correlation matrix computed")
 
-dosagefile = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+dosagefile = sys.argv[4]
 haplotigs, diplotigs, triplotigs, tetraplotigs, replotigs = [],[],[],[], []
 nodes = []
 with open(dosagefile) as dosage:
