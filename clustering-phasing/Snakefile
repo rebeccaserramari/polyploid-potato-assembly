@@ -1,3 +1,5 @@
+chromosomes = {"ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12"}
+haplotypes = {"h1","h2","h3","h4"}
 
 rule all:
 	input:
@@ -14,6 +16,20 @@ rule cluster:
 		"clustering.txt"
 	shell:
 		"/usr/bin/time python3 cluster_allnodes.py {input.path} {input.dosagefile} {input.graph} {input.kmercounts}"
+
+rule write_nodes_to_haplo:
+	input:
+		cluster = "readgroup_clusters/clusters_{chrom}_new.tsv"
+	output:
+		"readgroup_clusters/clusters_{chrom}_new_nodes.csv"		
+	shell:
+		"/usr/bin/time python3 write_nodes_to_haplotypes.py {input.cluster} {output}"
+
+rule write_haplotype_colors:
+	input:
+		"readgroup_clusters/clusters_{chrom}_new_nodes.csv"
+	shell:
+		"/usr/bin/time python3 write_haplo_colors.py {input}"		 	
 		
 #phase chromosome clusters into haplotypes		
 rule cluster_phasing:		
@@ -22,26 +38,36 @@ rule cluster_phasing:
 		kmercounts = "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv",
 		dosage = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
 	params:	
-		outpath = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222"
+		outpath = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222/"
 	output:
 		
 	shell:
 		"/usr/bin/time -v python3 cluster_phasing.py {input.gfapath} {input.kmercounts} {params.outpath} {input.dosage}"
+
 		
+rule add_unphased:
+	input:
+		clusterfile = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_clusters/clusters_{chrom}_new.tsv",	
+		nodefile = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222/allnodes_RG{chrom}.txt"		
+	params:
+		chromosome = {chrom}			
+	output:
+		"/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_clusters/clusters_{chrom}_new_withunphased.tsv"
+	shell:
+		"/usr/bin/time -v python3 add_unphased_nodes_tofile.py {params.chromosome} {input.clusterfile} {input.nodefile} {output}"		
 		
-#Todo: create colored nodes files		
 		
 #find graph traversals to assemble haplotigs
 rule thread:
 	input:
 		gfa = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.gfa",
-		colored_nodes = "readgroup_clusters/clusters_ch12_colors_h3.csv",
-		clusterfile = "readgroup_clusters/clusters_ch12_new_withunphased.tsv",
+		colored_nodes = "readgroup_clusters/clusters_{chrom}_colors_{haplo}.csv",
+		clusterfile = "readgroup_clusters/clusters_{chrom}_new_withunphased.tsv",
 	params:
 		write_output = False,
 		write_sequence = False	
 	log:
-		'readgroup_clusters/clusters_ch12_h3_new-`date +"%Y-%m-%d_%H-%M"`.log'
+		'readgroup_clusters/clusters_{chrom}_{haplo}_new-`date +"%Y-%m-%d_%H-%M"`.log'
 	output:
 		
 	shell:
