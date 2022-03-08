@@ -2,7 +2,6 @@
 import sys
 from statistics import mean
 from compute_graphstats import calculate_N50, print_stats, calculate_N50_alternative 
-from write_phasedpaths import compute_pathlength, write_sequences, basepair_length
 from write_paths import find_BFS_SP
 
 redfile = sys.argv[2]
