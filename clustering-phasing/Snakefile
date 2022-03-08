@@ -8,10 +8,10 @@ rule all:
 #cluster the nodes into chromosomal clusters
 rule cluster:
 	input: 
-		path = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.components/",
-		dosagefile = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv",
-		graph = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.gfa",
-		kmercounts = "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv" 			
+		path = "spud_altus_hifiasm.r_utg.noseq.components/",
+		dosagefile = "summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv",
+		graph = "spud_altus_hifiasm.r_utg.noseq.gfa",
+		kmercounts = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1.tsv" 			
 	output:
 		"clustering.txt"
 	shell:
@@ -34,11 +34,11 @@ rule write_haplotype_colors:
 #phase chromosome clusters into haplotypes		
 rule cluster_phasing:		
 	input:
-		gfapath = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.components/",
-		kmercounts = "/home/rebecca/work/hifi-potato/allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv",
-		dosage = "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+		gfapath = "spud_altus_hifiasm.r_utg.components/",
+		kmercounts = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv",
+		dosage = "summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
 	params:	
-		outpath = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222/"
+		outpath = "readgroup_clusters/"
 	output:
 		
 	shell:
@@ -47,12 +47,13 @@ rule cluster_phasing:
 		
 rule add_unphased:
 	input:
-		clusterfile = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_clusters/clusters_{chrom}_new.tsv",	
-		nodefile = "/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_kmercounts_030222/allnodes_RG{chrom}.txt"		
+		clusterfile = "readgroup_clusters/clusters_{chrom}_new.tsv",	
+		#written during rule cluster_phasing
+		nodefile = "readgroup_clusters/allnodes_RG{chrom}.txt"		
 	params:
 		chromosome = {chrom}			
 	output:
-		"/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_clusters/clusters_{chrom}_new_withunphased.tsv"
+		"readgroup_clusters/clusters_{chrom}_new_withunphased.tsv"
 	shell:
 		"/usr/bin/time -v python3 add_unphased_nodes_tofile.py {params.chromosome} {input.clusterfile} {input.nodefile} {output}"		
 		
@@ -60,7 +61,7 @@ rule add_unphased:
 #find graph traversals to assemble haplotigs
 rule thread:
 	input:
-		gfa = "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.gfa",
+		gfa = "spud_altus_hifiasm.r_utg.gfa",
 		colored_nodes = "readgroup_clusters/clusters_{chrom}_colors_{haplo}.csv",
 		clusterfile = "readgroup_clusters/clusters_{chrom}_new_withunphased.tsv",
 	params:
@@ -71,7 +72,7 @@ rule thread:
 	output:
 		
 	shell:
-		"/usr/bin/time -v python3 -u write_threaded_paths.py {input.gfa} {input.colored_nodes} {input.clusterfile} {params.write_output} {params.write_sequence} | tee {log}
+		"/usr/bin/time -v python3 -u write_threaded_paths.py {input.gfa} {input.colored_nodes} {input.clusterfile} {params.write_output} {params.write_sequence} | tee {log}"
 
 
 		
