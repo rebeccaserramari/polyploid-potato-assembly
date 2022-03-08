@@ -5,8 +5,8 @@ path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
 
 rule all:
 	input:
-		countfiles = expand("../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt", sample=config['data']['samples']),
-		merged = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1.tsv"
+		expand("../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt", sample=config['data']['samples']),
+		"allnodes_merged_shortreadcounts_k71_bcalm.tsv"
 
 
 #rule unzip:

@@ -37,10 +37,10 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
 
-	readfile = argparser.get_argument('r');
-	shortreadfile = argparser.get_argument('s');
-	kmerfile = argparser.get_argument('k');
-	countfile = argparser.get_argument('c');
+	readfile = argparser.get_arg_parameter('r');
+	shortreadfile = argparser.get_arg_parameter('s');
+	kmerfile = argparser.get_arg_parameter('k');
+	countfile = argparser.get_arg_parameter('c');
 
 	
 	unsigned int k = 71;

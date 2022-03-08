@@ -1,0 +1,129 @@
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <string>
+#include "argumentparser.hpp"
+#include <jellyfish/mer_dna.hpp>
+#include "jellyfishkmercounter.hpp"
+#include "uniquekmers.hpp"
+
+using namespace std;
+
+
+int main(int argc, char* argv[]) {
+
+	string readfile = "";
+	string shortreadfile = "";
+	string allelefile = "";
+	string kmerfile = "";
+	string countfile = "";
+
+	cerr << "Polyploid genome assembly (I): Finding k-mers unique within Altus" << endl;
+	cerr << "Author: Rebecca Serra Mari" << endl;
+
+	ArgumentParser argparser;
+	argparser.add_command("Polyassembly [options] -g <graph.gfa> -a <alignments.gaf>");
+
+	argparser.add_subcommand("find_kmers", {'r', 's', 'k'},{});
+	argparser.add_subcommand("count_kmers", {'s', 'k', 'c'}, {});
+
+	string cmd;
+	cmd = argparser.get_subcommand(argc, argv);
+	if (cmd == "find_kmers") {
+		argparser.add_mandatory_argument('r', "file with graph unitig sequences in fastq or fasta format");
+		argparser.add_mandatory_argument('s', "file with short read data, in fastq or fasta format");
+		argparser.add_mandatory_argument('k', "kmerfile to be written to during the kmer counting");
+	}	
+	else if (cmd == "count_kmers") {
+		argparser.add_mandatory_argument('s', "file with short read data, in fastq or fasta format");
+		argparser.add_mandatory_argument('k', "kmerfile to be written to during the kmer counting");
+		argparser.add_mandatory_argument('c', "outfile for summed up unique kmer counts in short read sample");	
+	}
+
+		try {
+		argparser.parse(argc, argv);
+	} catch (const runtime_error& e) {
+		argparser.print_help();
+		cerr << e.what() << endl;
+		return 1;
+	} catch (const exception& e) {
+		return 0;
+	}
+
+	readfile = argparser.get_arg_parameter('r');
+	shortreadfile = argparser.get_arg_parameter('s');
+	kmerfile = argparser.get_arg_parameter('k');
+	countfile = argparser.get_arg_parameter('c');
+	
+//	unsigned int k = 71;
+	unsigned int k = 4;
+	unsigned int threads = 24;
+
+	if (cmd == "find_kmers") {
+ 
+	cout << "count kmers in Altus" << endl;
+	JellyfishKmerCounter countReadKmers(readfile, k, threads);
+	cout << "kmers in Altus counted" << endl;
+
+
+	cout << "count kmers in Colomba" << endl;
+	JellyfishKmerCounter shortReadKmers(shortreadfile, k, threads);
+	cout << "kmers in Colomba counted" << endl;
+
+	cout << "query unique Altus kmers not present in Colomba " << endl;
+	countReadKmers.queryFromSequence(readfile, shortReadKmers, kmerfile);
+
+
+	return(0);
+	}
+	
+	else if (cmd == "count_kmers") {
+
+		ofstream outfile;
+		outfile.open(countfile);
+		
+		cout << "counting kmers in short reads" << endl;
+		JellyfishKmerCounter shortReadKmers(shortreadfile, k, threads);	
+		cout << "kmers in short reads counted" << endl;
+	
+		//open kmer file with unique altus-specific kmers
+		ifstream file(kmerfile);
+		string str = "";	
+		string current_label = "";
+		string node_label = "";
+		int linecount = -1;
+		map<string, int> node_to_count;
+		map<string, int> node_to_kmer;
+		map<string, int> node_to_bincount;
+		
+		while(getline(file, str)) {
+			linecount ++;
+			if (linecount%1000000==0) cout << "line " << linecount << endl;
+			if (str.at(0) == '>') {
+				current_label = str;	
+				node_label = current_label.substr(1, 10);	
+			}	
+			else {
+				jellyfish::mer_dna jellymer(str);
+				uint64_t count = shortReadKmers.getKmerCount(jellymer);	
+				node_to_count[node_label] += count;
+				node_to_kmer[node_label] += 1;
+				if (count > 0) {
+					node_to_bincount[node_label] += 1;			
+				}
+				}	
+			}
+		
+		for (auto& node: node_to_count) {
+			outfile << node.first << "\t" << node_to_kmer[node.first] << "\t" << node_to_bincount[node.first] << "\t" << node.second << endl;	
+		}
+		outfile.close();
+	
+		return 0;	
+	
+	}	
+
+}
+
+
+

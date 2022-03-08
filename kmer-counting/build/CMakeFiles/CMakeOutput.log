@@ -1,0 +1,1299 @@
+The system is: Linux - 5.11.0-46-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc 
+Build flags: -march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/rebecca/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++ 
+Build flags: -fvisibility-inlines-hidden;-std=c++17;-fmessage-length=0;-march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/rebecca/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_20f3d/fast && /usr/bin/make -f CMakeFiles/cmTC_20f3d.dir/build.make CMakeFiles/cmTC_20f3d.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20f3d.dir/testCCompiler.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -o CMakeFiles/cmTC_20f3d.dir/testCCompiler.c.o   -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_20f3d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20f3d.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_20f3d.dir/testCCompiler.c.o  -o cmTC_20f3d 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_737fa/fast && /usr/bin/make -f CMakeFiles/cmTC_737fa.dir/build.make CMakeFiles/cmTC_737fa.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o' '-c'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1 -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -isystem /home/rebecca/miniconda3/include /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o
+GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1
+GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"
+ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/rebecca/miniconda3/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include
+ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include
+End of search list.
+GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 5f20d987048986f2a55289b7d7729157
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o' '-c'
+Linking C executable cmTC_737fa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_737fa.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o  -o cmTC_737fa 
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc
+COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_737fa'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvkrVUi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_737fa /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_737fa'
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/rebecca/miniconda3/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+    add: [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  end of search list found
+  collapse include dir [/home/rebecca/miniconda3/include] ==> [/home/rebecca/miniconda3/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  implicit include dirs: [/home/rebecca/miniconda3/include;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_737fa/fast && /usr/bin/make -f CMakeFiles/cmTC_737fa.dir/build.make CMakeFiles/cmTC_737fa.dir/build]
+  ignore line: [make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c c++ fortran objc obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1 -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -isystem /home/rebecca/miniconda3/include /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o]
+  ignore line: [GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1]
+  ignore line: [GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18)  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/rebecca/miniconda3/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18)  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 5f20d987048986f2a55289b7d7729157]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [Linking C executable cmTC_737fa]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_737fa.dir/link.txt --verbose=1]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl -O2 -Wl --sort-common -Wl --as-needed -Wl -z relro -Wl -z now -Wl --disable-new-dtags -Wl --gc-sections -Wl -rpath /home/rebecca/miniconda3/lib -Wl -rpath-link /home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o  -o cmTC_737fa ]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c c++ fortran objc obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_737fa']
+  link line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvkrVUi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_737fa /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvkrVUi.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_737fa] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o] ==> ignore
+    arg [-L/home/rebecca/miniconda3/lib] ==> dir [/home/rebecca/miniconda3/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-O2] ==> ignore
+    arg [--sort-common] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [--disable-new-dtags] ==> ignore
+    arg [--gc-sections] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [CMakeFiles/cmTC_737fa.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> ignore
+  collapse library dir [/home/rebecca/miniconda3/lib] ==> [/home/rebecca/miniconda3/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc] ==> [/home/rebecca/miniconda3/lib/gcc]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/home/rebecca/miniconda3/lib;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0;/home/rebecca/miniconda3/lib/gcc;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5444b/fast && /usr/bin/make -f CMakeFiles/cmTC_5444b.dir/build.make CMakeFiles/cmTC_5444b.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5444b.dir/testCXXCompiler.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -o CMakeFiles/cmTC_5444b.dir/testCXXCompiler.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5444b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5444b.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_5444b.dir/testCXXCompiler.cxx.o  -o cmTC_5444b 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a0383/fast && /usr/bin/make -f CMakeFiles/cmTC_a0383.dir/build.make CMakeFiles/cmTC_a0383.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1plus -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/rebecca/miniconda3/include /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++1z -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o
+GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1
+GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"
+ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/rebecca/miniconda3/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include
+ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include
+End of search list.
+GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 2f61739646e29ad60d2358d78f3bd7b4
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
+Linking CXX executable cmTC_a0383
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0383.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a0383 
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++
+COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_a0383' '-shared-libgcc'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSDQn8e.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a0383 /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_a0383' '-shared-libgcc'
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/rebecca/miniconda3/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+    add: [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  end of search list found
+  collapse include dir [/home/rebecca/miniconda3/include] ==> [/home/rebecca/miniconda3/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  collapse include dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include]
+  collapse include dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  implicit include dirs: [/home/rebecca/miniconda3/include;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/include;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_a0383/fast && /usr/bin/make -f CMakeFiles/cmTC_a0383.dir/build.make CMakeFiles/cmTC_a0383.dir/build]
+  ignore line: [make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c c++ fortran objc obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
+  ignore line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1plus -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/rebecca/miniconda3/include /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++1z -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1]
+  ignore line: [GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18)  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/rebecca/miniconda3/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18)  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 2f61739646e29ad60d2358d78f3bd7b4]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
+  ignore line: [Linking CXX executable cmTC_a0383]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0383.dir/link.txt --verbose=1]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl -O2 -Wl --sort-common -Wl --as-needed -Wl -z relro -Wl -z now -Wl --disable-new-dtags -Wl --gc-sections -Wl -rpath /home/rebecca/miniconda3/lib -Wl -rpath-link /home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a0383 ]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c c++ fortran objc obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_a0383' '-shared-libgcc']
+  link line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSDQn8e.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a0383 /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccSDQn8e.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_a0383] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o] ==> ignore
+    arg [-L/home/rebecca/miniconda3/lib] ==> dir [/home/rebecca/miniconda3/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-O2] ==> ignore
+    arg [--sort-common] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [--disable-new-dtags] ==> ignore
+    arg [--gc-sections] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [CMakeFiles/cmTC_a0383.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> ignore
+  collapse library dir [/home/rebecca/miniconda3/lib] ==> [/home/rebecca/miniconda3/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc] ==> [/home/rebecca/miniconda3/lib/gcc]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/home/rebecca/miniconda3/lib;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0;/home/rebecca/miniconda3/lib/gcc;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit fwks: []
+
+
+The system is: Linux - 5.11.0-46-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc 
+Build flags: -march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/rebecca/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/3.14.0/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++ 
+Build flags: -fvisibility-inlines-hidden;-std=c++17;-fmessage-length=0;-march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/rebecca/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/3.14.0/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_53b70/fast 
+/usr/bin/make -f CMakeFiles/cmTC_53b70.dir/build.make CMakeFiles/cmTC_53b70.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53b70.dir/testCCompiler.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -o CMakeFiles/cmTC_53b70.dir/testCCompiler.c.o   -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_53b70
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53b70.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_53b70.dir/testCCompiler.c.o  -o cmTC_53b70 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3da03/fast 
+/usr/bin/make -f CMakeFiles/cmTC_3da03.dir/build.make CMakeFiles/cmTC_3da03.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o   -c /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o' '-c'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1 -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -isystem /home/rebecca/miniconda3/include /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o
+GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1
+GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"
+ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/rebecca/miniconda3/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include
+ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include
+End of search list.
+GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 5f20d987048986f2a55289b7d7729157
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o' '-c'
+Linking C executable cmTC_3da03
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3da03.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o  -o cmTC_3da03 
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc
+COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_3da03'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUuVXWB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3da03 /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_3da03'
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/rebecca/miniconda3/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+    add: [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  end of search list found
+  implicit include dirs: [/home/rebecca/miniconda3/include;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include;/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3da03/fast ]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3da03.dir/build.make CMakeFiles/cmTC_3da03.dir/build]
+  ignore line: [make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o   -c /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1 -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -isystem /home/rebecca/miniconda3/include /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o]
+  ignore line: [GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1]
+  ignore line: [GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/rebecca/miniconda3/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 5f20d987048986f2a55289b7d7729157]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [Linking C executable cmTC_3da03]
+  ignore line: [/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3da03.dir/link.txt --verbose=1]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o  -o cmTC_3da03 ]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_3da03']
+  link line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUuVXWB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3da03 /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccUuVXWB.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_3da03] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o] ==> ignore
+    arg [-L/home/rebecca/miniconda3/lib] ==> dir [/home/rebecca/miniconda3/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-O2] ==> ignore
+    arg [--sort-common] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [--disable-new-dtags] ==> ignore
+    arg [--gc-sections] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [CMakeFiles/cmTC_3da03.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> ignore
+  collapse library dir [/home/rebecca/miniconda3/lib] ==> [/home/rebecca/miniconda3/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc] ==> [/home/rebecca/miniconda3/lib/gcc]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/home/rebecca/miniconda3/lib;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0;/home/rebecca/miniconda3/lib/gcc;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2bcf0/fast 
+/usr/bin/make -f CMakeFiles/cmTC_2bcf0.dir/build.make CMakeFiles/cmTC_2bcf0.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2bcf0.dir/feature_tests.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c11 -o CMakeFiles/cmTC_2bcf0.dir/feature_tests.c.o   -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_2bcf0
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bcf0.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_2bcf0.dir/feature_tests.c.o  -o cmTC_2bcf0 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_44cf5/fast 
+/usr/bin/make -f CMakeFiles/cmTC_44cf5.dir/build.make CMakeFiles/cmTC_44cf5.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_44cf5.dir/feature_tests.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c99 -o CMakeFiles/cmTC_44cf5.dir/feature_tests.c.o   -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_44cf5
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44cf5.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_44cf5.dir/feature_tests.c.o  -o cmTC_44cf5 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_99754/fast 
+/usr/bin/make -f CMakeFiles/cmTC_99754.dir/build.make CMakeFiles/cmTC_99754.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_99754.dir/feature_tests.c.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c90 -o CMakeFiles/cmTC_99754.dir/feature_tests.c.o   -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_99754
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99754.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_99754.dir/feature_tests.c.o  -o cmTC_99754 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_63754/fast 
+/usr/bin/make -f CMakeFiles/cmTC_63754.dir/build.make CMakeFiles/cmTC_63754.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_63754.dir/testCXXCompiler.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -o CMakeFiles/cmTC_63754.dir/testCXXCompiler.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_63754
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63754.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_63754.dir/testCXXCompiler.cxx.o  -o cmTC_63754 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_556ba/fast 
+/usr/bin/make -f CMakeFiles/cmTC_556ba.dir/build.make CMakeFiles/cmTC_556ba.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -c /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1plus -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/rebecca/miniconda3/include /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++1z -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o
+GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1
+GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"
+ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"
+ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/rebecca/miniconda3/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed
+ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include
+ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include
+End of search list.
+GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)
+	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 2f61739646e29ad60d2358d78f3bd7b4
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
+Linking CXX executable cmTC_556ba
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_556ba.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_556ba 
+Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs
+COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++
+COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper
+Target: x86_64-conda_cos6-linux-gnu
+Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie
+Thread model: posix
+gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) 
+COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/
+LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_556ba' '-shared-libgcc'
+ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKSjzuv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_556ba /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_556ba' '-shared-libgcc'
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/rebecca/miniconda3/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+    add: [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+    add: [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  end of search list found
+  implicit include dirs: [/home/rebecca/miniconda3/include;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed;/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include;/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_556ba/fast ]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_556ba.dir/build.make CMakeFiles/cmTC_556ba.dir/build]
+  ignore line: [make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -v -o CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -c /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
+  ignore line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/cc1plus -quiet -v -iprefix /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/ -isysroot /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/rebecca/miniconda3/include /home/rebecca/miniconda3/envs/polya/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++1z -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [GNU assembler version 2.31.1 (x86_64-conda_cos6-linux-gnu) using BFD version (crosstool-NG 1.23.0.444-4ea7) 2.31.1]
+  ignore line: [GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot/include"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/rebecca/miniconda3/bin/../lib/gcc/../../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/rebecca/miniconda3/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/x86_64-conda_cos6-linux-gnu]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include/c++/7.3.0/backward]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/include-fixed]
+  ignore line: [ /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/include]
+  ignore line: [ /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (crosstool-NG 1.23.0.449-a04d0) version 7.3.0 (x86_64-conda_cos6-linux-gnu)]
+  ignore line: [	compiled by GNU C version 4.4.7 20120313 (Red Hat 4.4.7-18), GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 2f61739646e29ad60d2358d78f3bd7b4]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-v' '-o' 'CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
+  ignore line: [Linking CXX executable cmTC_556ba]
+  ignore line: [/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_556ba.dir/link.txt --verbose=1]
+  ignore line: [/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib -v -rdynamic CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_556ba ]
+  ignore line: [Reading specs from /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/specs]
+  ignore line: [COLLECT_GCC=/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-conda_cos6-linux-gnu]
+  ignore line: [Configured with: /home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=x86_64-conda_cos6-linux-gnu --prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built --with-sysroot=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-languages=c,c++,fortran,objc,obj-c++ --with-pkgversion='crosstool-NG 1.23.0.449-a04d0' --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-libmpx --with-gmp=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpfr=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-mpc=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --with-isl=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/.build/x86_64-conda_cos6-linux-gnu/buildtools --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/rdonnelly/mc/conda-bld/compilers_linux-64_1534865402226/work/gcc_built/x86_64-conda_cos6-linux-gnu/sysroot --enable-long-long --enable-default-pie]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.3.0 (crosstool-NG 1.23.0.449-a04d0) ]
+  ignore line: [COMPILER_PATH=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../libexec/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/:/home/rebecca/miniconda3/bin/../lib/gcc/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/:/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/:/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++1z' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/home/rebecca/miniconda3/include' '-L/home/rebecca/miniconda3/lib' '-v' '-rdynamic' '-o' 'cmTC_556ba' '-shared-libgcc']
+  link line: [ /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2 -plugin /home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so -plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKSjzuv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_556ba /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o -L/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0 -L/home/rebecca/miniconda3/bin/../lib/gcc -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib -L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib -L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib -rpath /home/rebecca/miniconda3/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/rebecca/miniconda3/lib -rpath-link /home/rebecca/miniconda3/lib CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o /home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/rebecca/miniconda3/bin/../libexec/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccKSjzuv.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_556ba] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtbeginS.o] ==> ignore
+    arg [-L/home/rebecca/miniconda3/lib] ==> dir [/home/rebecca/miniconda3/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib]
+    arg [-L/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib]
+    arg [-L/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-O2] ==> ignore
+    arg [--sort-common] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [--disable-new-dtags] ==> ignore
+    arg [--gc-sections] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/rebecca/miniconda3/lib] ==> ignore
+    arg [CMakeFiles/cmTC_556ba.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/crtendS.o] ==> ignore
+    arg [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> ignore
+  collapse library dir [/home/rebecca/miniconda3/lib] ==> [/home/rebecca/miniconda3/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0] ==> [/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc] ==> [/home/rebecca/miniconda3/lib/gcc]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/../lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib]
+  collapse library dir [/home/rebecca/miniconda3/bin/../x86_64-conda_cos6-linux-gnu/sysroot/usr/lib] ==> [/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/home/rebecca/miniconda3/lib;/home/rebecca/miniconda3/lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0;/home/rebecca/miniconda3/lib/gcc;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/lib;/home/rebecca/miniconda3/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++1z] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c4eff/fast 
+/usr/bin/make -f CMakeFiles/cmTC_c4eff.dir/build.make CMakeFiles/cmTC_c4eff.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4eff.dir/feature_tests.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c++1z -o CMakeFiles/cmTC_c4eff.dir/feature_tests.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c4eff
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4eff.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_c4eff.dir/feature_tests.cxx.o  -o cmTC_c4eff 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_39e70/fast 
+/usr/bin/make -f CMakeFiles/cmTC_39e70.dir/build.make CMakeFiles/cmTC_39e70.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_39e70.dir/feature_tests.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c++14 -o CMakeFiles/cmTC_39e70.dir/feature_tests.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_39e70
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39e70.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_39e70.dir/feature_tests.cxx.o  -o cmTC_39e70 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ef21f/fast 
+/usr/bin/make -f CMakeFiles/cmTC_ef21f.dir/build.make CMakeFiles/cmTC_ef21f.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ef21f.dir/feature_tests.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c++11 -o CMakeFiles/cmTC_ef21f.dir/feature_tests.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ef21f
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef21f.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_ef21f.dir/feature_tests.cxx.o  -o cmTC_ef21f 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9e389/fast 
+/usr/bin/make -f CMakeFiles/cmTC_9e389.dir/build.make CMakeFiles/cmTC_9e389.dir/build
+make[1]: Entering directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9e389.dir/feature_tests.cxx.o
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++    -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include    -std=c++98 -o CMakeFiles/cmTC_9e389.dir/feature_tests.cxx.o -c /home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_9e389
+/home/rebecca/miniconda3/envs/polya/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e389.dir/link.txt --verbose=1
+/home/rebecca/miniconda3/bin/x86_64-conda_cos6-linux-gnu-c++  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/rebecca/miniconda3/include   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/rebecca/miniconda3/lib -Wl,-rpath-link,/home/rebecca/miniconda3/lib -L/home/rebecca/miniconda3/lib  -rdynamic CMakeFiles/cmTC_9e389.dir/feature_tests.cxx.o  -o cmTC_9e389 
+make[1]: Leaving directory '/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
