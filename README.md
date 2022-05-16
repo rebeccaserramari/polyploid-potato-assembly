@@ -14,11 +14,11 @@ Code for assembly approach presented in "Haplotype-resolved assembly of a tetrap
    
    `mkdir build; cd build; cmake ..; make`
 ####  Running k-mer counting procedure
-1. Find k-mers that are uniquely present in \<targetfile\> and not in \<samplefile\>:
+1. Find k-mers of length \<len\> that are uniquely present in \<targetfile\> and not in \<samplefile\>:
 
-    `./polyassembly_findkmers find_kmers -r <targetfile> -s <samplefile> -k <kmerfile>`
+    `./polyassembly_findkmers find_kmers -r <targetfile> -s <samplefile> -k <kmerfile> -l <len>`
   
-2. Count k-mer from previously computed <kmerfile> in short reads of progeny sample:
+2. Count k-mers from previously computed <kmerfile> in short reads of progeny samples:
   
     run `snakemake` within the `kmer-counting` directory.
   
