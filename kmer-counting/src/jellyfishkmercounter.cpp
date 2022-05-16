@@ -98,7 +98,6 @@ void JellyfishKmerCounter::queryFromSequence(string readfile) {
 		vector<jellyfish::mer_dna> unique_mers;
 		if(j.is_empty()) break;
 		for(size_t i = 0; i < j->nb_filled; ++i) {
-			std::cout << ">" << j->data[i].header << "\n";
 			mers = j->data[i].seq;
 			if(mers != mers_end) {
 				if (this->getKmerCount(*mers) == 1) {
@@ -156,11 +155,9 @@ void JellyfishKmerCounter::query_from_db(string readfile, const Database& db, st
 	jellyfish::stream_manager<char**> streams(file_begin, file_end);
 	//sequence_parser parser(4, 100, 1, streams);
 	jellyfish::whole_sequence_parser<jellyfish::stream_manager<char**> > parser(24, 10, 20, streams); 
-	cout << "before loop" << endl;
 	ofstream uniquefile;
 	uniquefile.open(kmerfile);
 	while(true) {
-		cout << "in loop" << endl;
 		sequence_parser::job j(parser);
 		vector<jellyfish::mer_dna> unique_mers;
 		vector<jellyfish::mer_dna> specific_mers;
@@ -168,7 +165,6 @@ void JellyfishKmerCounter::query_from_db(string readfile, const Database& db, st
 		int nodecounter = -1;
 		for(size_t i = 0; i < j->nb_filled; ++i) {
 			nodecounter += 1;
-			cout << "node " << nodecounter << " >" << j->data[i].header << "\n";			
 			mers = j->data[i].seq;
 			int kmercount = 0;
 			if(mers != mers_end) {
@@ -217,11 +213,9 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 	jellyfish::stream_manager<char**> streams(file_begin, file_end);
 	//sequence_parser parser(4, 100, 1, streams);
 	jellyfish::whole_sequence_parser<jellyfish::stream_manager<char**> > parser(4, 100, 1, streams); 
-	cout << "before loop" << endl;
 	ofstream uniquefile;
 	uniquefile.open(kmerfile);
 	while(true) {
-		cout << "in loop" << endl;
 		sequence_parser::job j(parser);
 		vector<jellyfish::mer_dna> unique_mers;
 		vector<jellyfish::mer_dna> specific_mers;
@@ -229,7 +223,6 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 		int nodecounter = -1;
 		for(size_t i = 0; i < j->nb_filled; ++i) {
 			nodecounter += 1;
-			std::cout << "node " << nodecounter << " >" << j->data[i].header << "\n";			
 			mers = j->data[i].seq;
 			int kmercount = 0;
 			if(mers != mers_end) {

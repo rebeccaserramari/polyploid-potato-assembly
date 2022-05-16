@@ -6,6 +6,7 @@
 #include <jellyfish/mer_dna.hpp>
 #include "jellyfishkmercounter.hpp"
 #include "uniquekmers.hpp"
+#include <stdlib.h>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main(int argc, char* argv[]) {
 	string allelefile = "";
 	string kmerfile = "";
 	string countfile = "";
+	string kmerlength = "";
 
 	cerr << "Polyploid genome assembly (I): Finding k-mers unique within Altus" << endl;
 	cerr << "Author: Rebecca Serra Mari" << endl;
@@ -24,7 +26,7 @@ int main(int argc, char* argv[]) {
 	ArgumentParser argparser;
 	argparser.add_command("Polyassembly [options] -g <graph.gfa> -a <alignments.gaf>");
 
-	argparser.add_subcommand("find_kmers", {'r', 's', 'k'},{});
+	argparser.add_subcommand("find_kmers", {'r', 's', 'k', 'l'},{});
 	argparser.add_subcommand("count_kmers", {'s', 'k', 'c'}, {});
 
 	string cmd;
@@ -32,12 +34,13 @@ int main(int argc, char* argv[]) {
 	if (cmd == "find_kmers") {
 		argparser.add_mandatory_argument('r', "file with graph unitig sequences in fastq or fasta format");
 		argparser.add_mandatory_argument('s', "file with short read data, in fastq or fasta format");
-		argparser.add_mandatory_argument('k', "kmerfile to be written to during the kmer counting");
+		argparser.add_mandatory_argument('k', "k-mer file to be written to during the k-mer counting");
+		argparser.add_mandatory_argument('l', "k-mer length");
 	}	
 	else if (cmd == "count_kmers") {
 		argparser.add_mandatory_argument('s', "file with short read data, in fastq or fasta format");
-		argparser.add_mandatory_argument('k', "kmerfile to be written to during the kmer counting");
-		argparser.add_mandatory_argument('c', "outfile for summed up unique kmer counts in short read sample");	
+		argparser.add_mandatory_argument('k', "k-mer file to be written to during the k-mer counting");
+		argparser.add_mandatory_argument('c', "outfile for summed up unique k-mer counts in short read sample");	
 	}
 
 		try {
@@ -54,10 +57,13 @@ int main(int argc, char* argv[]) {
 	shortreadfile = argparser.get_arg_parameter('s');
 	kmerfile = argparser.get_arg_parameter('k');
 	countfile = argparser.get_arg_parameter('c');
-	
+	kmerlength = argparser.get_arg_parameter('l');
+
 //	unsigned int k = 71;
-	unsigned int k = 4;
+//	unsigned int k = 4;
+	unsigned int k = stoi(kmerlength);
 	unsigned int threads = 24;
+	cout << "k-mer length: " << k << endl;
 
 	if (cmd == "find_kmers") {
  
