@@ -1,12 +1,12 @@
 configfile: "config_offspring.json"
 
 path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
-
+k_val = [71]
 
 rule all:
 	input:
-		countfiles = expand("../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt", sample=config['data']['samples']),
-		merged = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1.tsv"
+		countfiles = expand("wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt", sample=config['data']['samples'], k=k_val),
+		merged = expand("allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv", k= k_val)
 
 
 #rule unzip:
@@ -21,28 +21,30 @@ rule polyassembly:
 	input:
 		path+"{sample}_merged.fastq"
 	output:
-		"../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k71_bcalm.txt"
+		"wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt"
 	threads: 24
 	params:
 		intermed = path+"{sample}_merged.fastq"
 	log:
-		"../../potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/logs/allnodes_{sample}_shortreadcounts_k71_bcalm.log"
+		"wholegenome_altus_k{k}_unique_counting/logs/allnodes_{sample}_shortreadcounts_k{k}.log"
 	shell:	
-		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/Polyassembly -g /gpfs/project/serramar/cproject/hifiasm_HG002_chr22.asm.r_utg.gfa -a /gpfs/project/serramar/cproject/chr22_ucsc_ONT_lt100kb-downsampled_to_hifiasm_HG002.gaf -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/allnodes_k71_unique_kmers_colIllum_bcalm.txt -c {output} |& tee {log}"
-		
-	
+		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers count_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k allnodes_k{k}_unique_kmers.txt-l {k} -c {output} |& tee {log}"
+			
 rule merge_countfiles:
 	output:
-		"allnodes_merged_shortreadcounts_k71_bcalm.tsv"
+		"allnodes_merged_shortreadcounts_k{k}.tsv"
 	shell:
 		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples']"
 		
 rule find_and_replace:
 	input:
-		"allnodes_merged_shortreadcounts_k71_bcalm.tsv"
+		"allnodes_merged_shortreadcounts_k{k}.tsv"
 	params:
 		cutoff = 0.1
 	output:
-		"allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1.tsv"
+		"allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv"
 shell:
 	"/usr/bin/time -v python3 filter_and_replace.py {input} {output} {params.cutoff}"	
+	
+	
+	
