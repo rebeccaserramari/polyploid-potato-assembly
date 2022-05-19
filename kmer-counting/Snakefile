@@ -16,10 +16,19 @@ rule all:
 #		path+"{sample}_merged.fastq"
 #	shell:
 #		"gunzip {input}"
+
+rule find_kmers:
+	output:
+		"allnodes_k{k}_unique_kmers.txt"
+	log:
+		"allnodes_k{k}_unique_kmers.log"
+	run:
+		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers find_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s /gpfs/project/serramar/potato-hifi/colomba_bcalm/colomba.unitigs.k71.fasta -k {output} -l {k} |& tee {log}"
+		 
 		
-rule polyassembly:
+rule count_kmers:
 	input:
-		path+"{sample}_merged.fastq"
+		rules.find_kmers.output
 	output:
 		"wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt"
 	threads: 24
@@ -28,23 +37,27 @@ rule polyassembly:
 	log:
 		"wholegenome_altus_k{k}_unique_counting/logs/allnodes_{sample}_shortreadcounts_k{k}.log"
 	shell:	
-		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers count_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k allnodes_k{k}_unique_kmers.txt-l {k} -c {output} |& tee {log}"
+		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers count_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k {input} -c {output} |& tee {log}"
 			
 rule merge_countfiles:
+#input: rules.count_kmers.output
+	params:
+		path = "wholegenome_altus_k{k}_unique_counting/count_files/",
+		k = {k}
 	output:
 		"allnodes_merged_shortreadcounts_k{k}.tsv"
-	shell:
-		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples']"
+	run:
+		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {params.path} {params.k}"
 		
 rule find_and_replace:
 	input:
-		"allnodes_merged_shortreadcounts_k{k}.tsv"
+		rules.merge_countfiles.output
 	params:
 		cutoff = 0.1
 	output:
 		"allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv"
-shell:
-	"/usr/bin/time -v python3 filter_and_replace.py {input} {output} {params.cutoff}"	
+	shell:
+		"/usr/bin/time -v python3 filter_and_replace.py {input} {output} {params.cutoff}"	
 	
 	
 	

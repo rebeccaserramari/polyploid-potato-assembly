@@ -1,30 +1,13 @@
-import os
 import sys
-import glob
-from collections import defaultdict
 
 outfile = sys.argv[1]
-#oldfile = sys.argv[2]
-path = '/home/rebecca/mounts/cluster/project/serramar/potato-hifi/altusHifi/altusGFA_270121/wholegenome_altus_k71_unique_counting/count_files/'
-
-#allnodes_HZK_11-0343_S192_shortreadcounts_k71_bcalm.txt
-
-#nodes_to_counts_tot = defaultdict(list)
-#nodes_to_counts_bin = defaultdict(list)
-#samples = []
-#with open(oldfile) as old:
-#	for i,line in enumerate(old):
-#		if i==0:
-#			samples= line.strip().split('\t')[2:]
 samples = sys.argv[2]
-print("number of samples: ", len(samples))
-
+path = sys.argv[3]
+k = sys.argv[4]
 
 for sample in samples:
-	filename = path+"allnodes_"+sample+"_shortreadcounts_k71_bcalm.txt"
+	filename = path+"allnodes_"+sample+"_shortreadcounts_k"+k+".txt"
 	with open(filename) as f:
-		sample = filename.split(path)[1].split('allnodes_')[1].split('_shortreadcounts')[0]
-		print(sample)
 		for i,line in enumerate(f):			
 			node_name = line.strip().split('\t')[0]
 			kmer_number = line.strip().split('\t')[1]
@@ -33,8 +16,6 @@ for sample in samples:
 			key = node_name+"\t"+kmer_number
 			nodes_to_counts_tot[key].append(kmer_count_tot)
 			nodes_to_counts_bin[key].append(kmer_count_bin)
-
-print("number of samples: ", len(samples) )
    		
 with open(outfile, 'w') as outf:
 	outf.write('node'+'\t')
