@@ -2,11 +2,13 @@ import sys
 
 outfile = sys.argv[1]
 samples = sys.argv[2]
-path = sys.argv[3]
+#path = sys.argv[3]
+filelist = sys.argv[3]
 k = sys.argv[4]
 
-for sample in samples:
-	filename = path+"allnodes_"+sample+"_shortreadcounts_k"+k+".txt"
+#for sample in samples:
+#	filename = path+"allnodes_"+sample+"_shortreadcounts_k"+k+".txt"
+for filename in filelist:
 	with open(filename) as f:
 		for i,line in enumerate(f):			
 			node_name = line.strip().split('\t')[0]

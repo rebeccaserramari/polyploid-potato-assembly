@@ -5,7 +5,6 @@ k_val = [71]
 
 rule all:
 	input:
-		countfiles = expand("wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt", sample=config['data']['samples'], k=k_val),
 		merged = expand("allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv", k= k_val)
 
 
@@ -40,14 +39,15 @@ rule count_kmers:
 		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers count_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k {input} -c {output} |& tee {log}"
 			
 rule merge_countfiles:
-#input: rules.count_kmers.output
+	input:
+		expand("wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{{k}}.txt", sample=config['data']['samples'])
 	params:
-		path = "wholegenome_altus_k{k}_unique_counting/count_files/",
+		#path = "wholegenome_altus_k{k}_unique_counting/count_files/",
 		k = {k}
 	output:
 		"allnodes_merged_shortreadcounts_k{k}.tsv"
 	run:
-		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {params.path} {params.k}"
+		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {input} {params.k}"
 		
 rule find_and_replace:
 	input:
