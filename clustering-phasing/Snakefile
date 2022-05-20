@@ -1,21 +1,46 @@
 chromosomes = {"ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12"}
 haplotypes = {"h1","h2","h3","h4"}
+k = {71}
+
+rule subset_samples:
+	output:
+		'samples.lst'
+	run:
+		import json
+		import random
+
+		conf = open(configfile)
+		data = json.load(conf)
+		samples = data['data']['samples']  
+
+		subset = random.sample(samples, sample_number)
+		with open('samples.lst','w') as outf:	
+			outf.write(','.join(subset))			
+		conf.close()
+
 
 rule all:
 	input:
 		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
 
 #cluster the nodes into chromosomal clusters
+"""
+coverage file has been computed by coverage-analysis snakefile
+"""
 rule cluster:
 	input: 
 		path = "spud_altus_hifiasm.r_utg.noseq.components/",
 		dosagefile = "summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv",
 		graph = "spud_altus_hifiasm.r_utg.noseq.gfa",
-		kmercounts = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1.tsv" 			
+		kmercounts = "allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv" 			
 	output:
 		"clustering.txt"
+		#TODO output in script
 	shell:
-		"/usr/bin/time python3 cluster_allnodes.py {input.path} {input.dosagefile} {input.graph} {input.kmercounts}"
+		"/usr/bin/time python3 cluster_allnodes.py {input.path} {input.dosagefile} {input.graph} {input.kmercounts} {output}"
+
+#not necessary to  mapping to ref chromosomes is a manual step, use readgroups instead (as wildcards)?
+
 
 rule write_nodes_to_haplo:
 	input:

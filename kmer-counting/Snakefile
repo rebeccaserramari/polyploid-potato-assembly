@@ -1,7 +1,7 @@
 configfile: "config_offspring.json"
 
 path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
-k_val = [71]
+k_val = {71}
 
 rule all:
 	input:

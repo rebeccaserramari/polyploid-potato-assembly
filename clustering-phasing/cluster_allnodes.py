@@ -29,6 +29,7 @@ def main():
 	gfafile = sys.argv[3]
 
 	countfile = sys.argv[4]
+	outfile = sys.argv[5]
 	
 	allnodes = []
 	with open(gfafile) as gfa:
@@ -74,7 +75,7 @@ def main():
 
 
 	#compute correlation
-		df = pd.read_csv(countfile, sep='\t')
+	df = pd.read_csv(countfile, sep='\t')
 	
 	df = df.dropna(axis='columns')
 	
@@ -173,9 +174,11 @@ def main():
 	print([(len(i),len(j)) for i,j in merged_compcluster.items()])
 
 	print("clusters: ")
-	for i,c in merged_compcluster.items():
-	    if len(c) > 0:
-	        print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
+	with open(outfile, 'w') as outf:
+		for i,c in merged_compcluster.items():
+		    if len(c) > 0:
+	   	     print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
+	   	     outf.write(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
 	allcomponents = [i for key,c in merged_compcluster.items() for i in c]
 	print("all components: ", len(allcomponents))
 	print("all components without doubles: ", len(set(allcomponents)))
