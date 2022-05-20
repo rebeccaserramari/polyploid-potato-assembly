@@ -111,7 +111,6 @@ def main():
 		
 		index_to_cluster[startindex] =  testcluster
 		clustersets.append(set(testcluster))
-	print("number of clustersets: ", len(clustersets))
 	grouped_sets = {}
 	for cur_set in sorted(clustersets, key=len,reverse=True):
 		is_subset = False
@@ -122,7 +121,6 @@ def main():
 		if not is_subset:
 			grouped_sets[tuple(cur_set)] = [cur_set]
 	
-	print("number of grouped sets: ", len(grouped_sets.keys()))
 	union_sets = {}
 	all_ids = []
 	for group, sets in grouped_sets.items():
@@ -169,9 +167,6 @@ def main():
 	                        visited.add(group)
 	        merged_compcluster[testgroup] = list(set(same))+list(set(same_single))
 	  
-	print("number of sets with only singletons: ", len([c for key,c in comp_sets.items() if len(extract_components(c))==0]))
-	print("number of sets with more than one component: ", len(longer_sets))      
-	print([(len(i),len(j)) for i,j in merged_compcluster.items()])
 
 	print("clusters: ")
 	with open(outfile, 'w') as outf:
@@ -180,18 +175,8 @@ def main():
 	   	     print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
 	   	     outf.write(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
 	allcomponents = [i for key,c in merged_compcluster.items() for i in c]
-	print("all components: ", len(allcomponents))
-	print("all components without doubles: ", len(set(allcomponents)))
-	#compute pairwise intersections:
-	for key,c in merged_compcluster.items():
-	    for key2, c2 in merged_compcluster.items():
-	        if key2 != key:
-	            intersect = len(set(c).intersection(set(c2)))
-	            if intersect != 0 and len(c2)!= 136 and len(c)!= 136:
-	                print("intersect, len c, len c2: ", intersect, len(c), len(c2))
-	singletongroups = [i for i in merged_compcluster.keys() if len(i) ==1]
-	print("length of groups with only one item: ", len(singletongroups))
-	print([comp_sets[i] for i in singletongroups])
+
+#	singletongroups = [i for i in merged_compcluster.keys() if len(i) ==1]
 	
 	#compute list of nodesets for each merged group
 	clusters = {}
