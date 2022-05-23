@@ -8,17 +8,46 @@ import pandas as pd
 from collections import defaultdict
 
 
+#write components extra
+def extract_components(memberlist):
+	cs =[]
+	for comp in memberlist:
+		
+		if comp[0] == 'c':
+			if len(comp.split('_fixed')) > 1:
+				comp = comp.split('_fixed')[0]
+			cs.append(comp)
+	return(cs)
+
+def extract_singletons(memberlist):
+	ss = []
+	for comp in memberlist:
+		if comp[0] == 's':
+			ss.append(comp)
+	return(ss)
+
+#from indexlist to nodes
+def to_nodes(indices):
+	nodes = []
+	for index in indices:
+		node = df.loc[[index],'node'].values[0]
+		nodes.append(node)
+	return(nodes)
+
 def main():
 	#assign each node ID to a component 
 	path = sys.argv[1]
 	node_to_comp = {}
+	comp_to_nodes = {}
 	for filename in glob.glob(os.path.join(path, '*.gfa')):
 		with open(os.path.join(os.getcwd(), filename)) as f:
 			component = filename.split(path)[1].split('.gfa')[0].strip('/')
+			comp_to_nodes[component] = []
 			for i,line in enumerate(f):
 				if line[0] == "S":
 					node = line.strip().split('\t')[1]
 					node_to_comp[node] = component
+					comp_to_nodes[component].append(node)
 	
 	print("number of nodes assigned to a component: ", len(node_to_comp.keys()))
 	
@@ -141,39 +170,39 @@ def main():
 	merged_compcluster = {}
 	visited = set()
 	for testgroup, testcomps in comp_sets.items():
-	    if testgroup not in visited:
-	        merged_compcluster[testgroup] = []
-	        same = []
-	        same_single = []
-	        cs = extract_components(testcomps)
-	        same.extend(cs)
-	        ss = extract_singletons(testcomps)
-	        same_single.extend(ss)
-	        for group, comps in comp_sets.items():       
-	            if group != testgroup:
-	                new_cs = extract_components(comps)
-	                new_ss = extract_singletons(comps)
-	                if len(new_cs) > 1:
-	                    longer_sets.append(group)               
-	                if len(new_cs) > 0:                    
-	                    intersect_frac = float(len(set(new_cs).intersection(set(cs)))/len(new_cs))
-	                    if intersect_frac >0.5:
-	                        same.extend(new_cs)                        
-	                        visited.add(group)
-	                else:
-	                    intersect_frac = float(len(set(new_ss).intersection(set(ss)))/len(new_ss))
-	                    if intersect_frac >0.5:
-	                        same_single.extend(new_ss)                        
-	                        visited.add(group)
-	        merged_compcluster[testgroup] = list(set(same))+list(set(same_single))
+		if testgroup not in visited:
+			merged_compcluster[testgroup] = []
+			same = []
+			same_single = []
+			cs = extract_components(testcomps)
+			same.extend(cs)
+			ss = extract_singletons(testcomps)
+			same_single.extend(ss)
+			for group, comps in comp_sets.items():       
+					if group != testgroup:
+						new_cs = extract_components(comps)
+						new_ss = extract_singletons(comps)
+						if len(new_cs) > 1:
+							longer_sets.append(group)               
+						if len(new_cs) > 0:                    
+							intersect_frac = float(len(set(new_cs).intersection(set(cs)))/len(new_cs))
+							if intersect_frac >0.5:
+									same.extend(new_cs)                        
+									visited.add(group)
+						else:
+							intersect_frac = float(len(set(new_ss).intersection(set(ss)))/len(new_ss))
+							if intersect_frac >0.5:
+									same_single.extend(new_ss)                        
+									visited.add(group)
+			merged_compcluster[testgroup] = list(set(same))+list(set(same_single))
 	  
 
 	print("clusters: ")
 	with open(outfile, 'w') as outf:
 		for i,c in merged_compcluster.items():
-		    if len(c) > 0:
-	   	     print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
-	   	     outf.write(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
+			if len(c) > 0:
+				print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co])
+				print(sorted([int(co.split('component')[1]) for co in c if 'component' in co]), "singletons: ", [co.split('single')[1] for co in c if 'single' in co], file=outf)
 	allcomponents = [i for key,c in merged_compcluster.items() for i in c]
 
 #	singletongroups = [i for i in merged_compcluster.keys() if len(i) ==1]
@@ -181,10 +210,13 @@ def main():
 	#compute list of nodesets for each merged group
 	clusters = {}
 	for group,compgroups in merged_compcluster.items():
-	    nodes = []
-	    for g in compgroups:
-	        nodes.extend(comp_to_nodes[g])
-	    clusters[group] = list(set(nodes))
+		nodes = []
+		for g in compgroups:
+			if g in comp_to_nodes.keys():
+				nodes.extend(comp_to_nodes[g])
+			else:
+				nodes.extend([g])
+		clusters[group] = list(set(nodes))
 	
 	print("number of clusters: ", len(clusters))    
 	print([len(c) for key,c in clusters.items()]) 
