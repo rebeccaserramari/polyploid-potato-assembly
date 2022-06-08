@@ -18,6 +18,7 @@ Code for assembly approach presented in "Haplotype-resolved assembly of a tetrap
 
     run `snakemake` within the `kmer-counting` directory.
     
+Make sure to update the config files accordingly!    
 2. To run the first step individually, i.e. find k-mers of length \<len\> that are uniquely present in \<targetfile\> and not in \<comparisonfile\>:
 
     `./polyassembly_findkmers find_kmers -r <targetfile> -s <comparisonfile> -k <kmerfile> -l <len>`
