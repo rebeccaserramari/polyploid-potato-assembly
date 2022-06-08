@@ -14,14 +14,23 @@ Code for assembly approach presented in "Haplotype-resolved assembly of a tetrap
    
    `mkdir build; cd build; cmake ..; make`
 ####  Running k-mer counting procedure
-1. Find k-mers of length \<len\> that are uniquely present in \<targetfile\> and not in \<samplefile\>:
+1. To run the full procedure, including finding unique k-mers in \<targetfile\>, counting the found unique k-mers in a set of sequences samples, and merging the resulting files:
 
-    `./polyassembly_findkmers find_kmers -r <targetfile> -s <samplefile> -k <kmerfile> -l <len>`
-  
-2. Count k-mers from previously computed <kmerfile> in short reads of progeny samples:
-  
     run `snakemake` within the `kmer-counting` directory.
-  
-### 3. Run the clustered phasing procedure
+    
+2. To run the first step individually, i.e. find k-mers of length \<len\> that are uniquely present in \<targetfile\> and not in \<comparisonfile\>:
 
+    `./polyassembly_findkmers find_kmers -r <targetfile> -s <comparisonfile> -k <kmerfile> -l <len>`
+
+The resulting k-mers are stored in \<kmerfile\>.
+  
+3. To run the second step individually, i.e. count the unique k-mers in \<samplefile\>:
+  
+    `/polyassembly_findkmers count_kmers -s <samplefile> -k <kmerfile> -c <output> -l <len>`
+  
+### 3. Phased clustering
+
+To run the full clustering procedure:
+
+  run `snakemake` in the `cluster-phasing` directory.
  
