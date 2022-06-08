@@ -17,11 +17,11 @@ if '.csv' in infile:
 	ending = '.csv'
 	
 
-with open(outfile+'_'+str(cutoff)+ending, 'w') as outf:
+#with open(outfile+'_'+str(cutoff)+ending, 'w') as outf:
+with open(outfile, 'w') as outf:
 	with open(infile) as f:
 		for i,l in enumerate(f):
 			counts = []
-			#print("line: ", i)
 			if i == 0:
 				outf.write(l)
 				continue

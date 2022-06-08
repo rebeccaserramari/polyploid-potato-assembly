@@ -1,0 +1,13 @@
+kmers: [4]
+altuspath: "test-data/testread.fa"
+colombapath: "test-data/testshortreadfile.fa"
+codepath: ""
+outpath: "results/"
+samplepath: "test-data/testshortreadfile.fa"
+
+#samplepath: "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
+#kmers: [71]
+#codepath: "/gpfs/project/serramar/potato-hifi/paper-code/kmer-counting/"
+#altuspath: "/gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta"
+#colombapath: "/gpfs/project/serramar/potato-hifi/colomba_bcalm/colomba.unitigs.k71.fasta"
+#outpath: "results/"

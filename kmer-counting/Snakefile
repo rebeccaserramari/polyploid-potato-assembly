@@ -1,62 +1,56 @@
 configfile: "config_offspring.json"
+configfile: "config.yaml"
 
-path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
-k_val = {51}
+samplepath = config['samplepath']
+codepath = config['codepath']
+outpath = config['outpath']
+altuspath = config['altuspath']
+colombapath = config['colombapath']
+k_val = config['kmers']
 
 rule all:
 	input:
-	#	merged = expand("allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv", k= k_val)
-		merged = expand("allnodes_merged_shortreadcounts_k{k}.tsv", k= k_val)
-	#	expand()
-
-#rule unzip:
-#	input:
-#		path+"{sample}_merged.fastq.gz"
-#	output:
-#		path+"{sample}_merged.fastq"
-#	shell:
-#		"gunzip {input}"
+		expand(outpath+"allnodes_merged_shortreadcounts_filtered_k{k}_0.1.tsv", k=k_val)
 
 rule find_kmers:
 	output:
-		"allnodes_k{k}_unique_kmers.txt"
+		outpath+"allnodes_k{k}_unique_kmers.txt"
 	log:
-		"allnodes_k{k}_unique_kmers.log"
-	run:
-		"/usr/bin/time -v /gpfs/project/serramar/potato-hifi/paper-code/kmer-counting/build/src/polyassembly_findkmers find_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s /gpfs/project/serramar/potato-hifi/colomba_bcalm/colomba.unitigs.k71.fasta -k {output} -l {k} |& tee {log}"
-		 
+		outpath+"allnodes_k{k}_unique_kmers.log"
+	shell:
+		"/usr/bin/time -v {config[codepath]}build/src/polyassembly_findkmers find_kmers -r {config[altuspath]} -s {config[colombapath]} -k {output} -l {wildcards.k} |& tee {log}"
 		
 rule count_kmers:
 	input:
 		rules.find_kmers.output	
 	output:
-		"wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt"
+		outpath+"wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt"
 	threads: 24
 	params:
-		intermed = path+"{sample}_merged.fastq"
+		#intermed = samplepath+"{sample}_merged.fastq"		
+		intermed = samplepath	
 	log:
-		"wholegenome_altus_k{k}_unique_counting/logs/allnodes_{sample}_shortreadcounts_k{k}.log"
+		outpath+"wholegenome_altus_k{k}_unique_counting/logs/allnodes_{sample}_shortreadcounts_k{k}.log"
 	shell:	
-		"/usr/bin/time -v /gpfs/project/serramar/potato-hifi/paper-code/kmer-counting/build/src/polyassembly_findkmers count_kmers -s {params.intermed} -k {input} -c {output} -l {wildcards.k} |& tee {log}"
+		"/usr/bin/time -v {config[codepath]}build/src/polyassembly_findkmers count_kmers -s {params.intermed} -k {input} -c {output} -l {wildcards.k} |& tee {log}"
 			
 rule merge_countfiles:
 	input:
-		expand("wholegenome_altus_k{{k}}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{{k}}.txt", sample=config['data']['samples'])
+		expand(outpath+"wholegenome_altus_k{{k}}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{{k}}.txt", sample=config['data']['samples'])
 	params:
-		#path = "wholegenome_altus_k{k}_unique_counting/count_files/",
-		# k = {k}
+		leng = len(config['data']['samples'])
 	output:
-		"allnodes_merged_shortreadcounts_k{k}.tsv"
-	run:
-		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {input} {wildcards.k}"
+		outpath+"allnodes_merged_shortreadcounts_k{k}.tsv"
+	shell:
+		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} {config[data][samples]} {input} {params.leng}"
 		
 rule find_and_replace:
 	input:
-		rules.merge_countfiles.output
+		outpath+"allnodes_merged_shortreadcounts_k{k}.tsv"
 	params:
 		cutoff = 0.1
 	output:
-		"allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv"
+		outpath+"allnodes_merged_shortreadcounts_filtered_k{k}_0.1.tsv"
 	shell:
 		"/usr/bin/time -v python3 filter_and_replace.py {input} {output} {params.cutoff}"	
 	
