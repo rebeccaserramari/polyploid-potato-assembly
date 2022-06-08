@@ -1,0 +1,12 @@
+component_path: "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.components/"
+gfa_path: "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.noseq.gfa"
+gfa_path_withseq: "/home/rebecca/work/hifi-potato/altusHifi_270121/altusGFA/spud_altus_hifiasm.r_utg.gfa"
+dosage_path: "/home/rebecca/work/hifi-potato/coverage/summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+readgroups: ["rg01","rg02","rg03","rg04","rg05","rg06","rg07","rg08","rg09","rg10","rg11","rg12"]
+#readgroups: ["rg01","rg02","rg03","rg04","rg05","rg06","rg08","rg09","rg10","rg11","rg12"]
+#readgroups: ["rg07"]
+haplotypes: ["h0","h1","h2", "h3"]
+kmers: [71]
+samplenumber: 50
+subset_samples: True
+outputpath: "readgroup_clusters/"

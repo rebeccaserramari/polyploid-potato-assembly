@@ -289,7 +289,7 @@ def merge_pairs_multiple(pair,merge_with, pair_to_path, node_to_extendedpaths):
 			start = p1[0]
 			p1_path = p1_path
 			mid_path = mid_path
-		assert(pair[1] in p2)
+#		assert(pair[1] in p2)
 		if pair[1] == p2[0]:
 			end = p2[1]
 			p2_path = p2_path
@@ -326,6 +326,7 @@ if __name__=='__main__':
 		write_outputlengths = True
 	if sys.argv[5] == 'write_sequence':
 		write_sequence = True
+	outpath = sys.argv[6]
 	haplotype = sys.argv[2].split('.')[0].split('_')[-1]
 	chromosome = sys.argv[2].split('.')[0].split('_')[-3]
 	allnodes = []	
@@ -336,7 +337,9 @@ if __name__=='__main__':
 				allnodes = l.strip().split('\t')[1].split(',')
 			testnodes_all.extend(l.strip().split('\t')[1].split(','))	
 	allnodes = [n for n in allnodes if len(n)>0]		
-	
+	#remove any potential double quotation marks in nodes
+	testnodes_all = [i.replace("'","") for i in testnodes_all]
+	allnodes = [i.replace("'","") for i in allnodes]
 	print("create graph")
 	graph, right_children, left_children = write_adjacency(gfafile)
 	print("graph created")
@@ -593,24 +596,23 @@ if __name__=='__main__':
 		if len(merge_with) == 1:
 			ip = merge_with[0]		
 			old_pair = pair
-			pair, mergedpath = merge_pairs(pair,ip, node_to_extendedpaths[pair[0]][0], pair_to_path[ip])
-			else:			
-				if pair[0] in old_pair:
-					
-					if pair[0] in node_to_path:
-						mergedpath = node_to_path[pair[0]][::-1] + mergedpath[1:]
-					else:
-						assert(node_to_end[pair[0]] in node_to_path)
-						mergedpath = node_to_path[node_to_end[pair[0]]] + mergedpath[1:]
-					pair = (node_to_end[pair[0]],pair[1])
+			pair, mergedpath = merge_pairs(pair,ip, node_to_extendedpaths[pair[0]][0], pair_to_path[ip])				
+			if pair[0] in old_pair:
+				
+				if pair[0] in node_to_path:
+					mergedpath = node_to_path[pair[0]][::-1] + mergedpath[1:]
 				else:
-					assert(pair[1] in old_pair)
-					if pair[1] in node_to_path:
-						mergedpath += node_to_path[pair[1]][1:]
-					else:
-						assert(node_to_end[pair[1]] in node_to_path)
-						mergedpath += node_to_path[node_to_end[pair[1]]][::-1][1:]		
-					pair = (pair[0], node_to_end[pair[1]])		
+					assert(node_to_end[pair[0]] in node_to_path)
+					mergedpath = node_to_path[node_to_end[pair[0]]] + mergedpath[1:]
+				pair = (node_to_end[pair[0]],pair[1])
+			else:
+				assert(pair[1] in old_pair)
+				if pair[1] in node_to_path:
+					mergedpath += node_to_path[pair[1]][1:]
+				else:
+					assert(node_to_end[pair[1]] in node_to_path)
+					mergedpath += node_to_path[node_to_end[pair[1]]][::-1][1:]		
+				pair = (pair[0], node_to_end[pair[1]])		
 		
 		if len(merge_with) == 2:
 			pair, mergedpath = merge_pairs_multiple(pair,merge_with, pair_to_path, node_to_extendedpaths)
@@ -708,7 +710,7 @@ if __name__=='__main__':
 	print("N50: ", str(n50_5/1000000)+" Mb")
 	
 	
-	with open("phased_nodes_colors_" + chromosome+ "_" + haplotype +".csv",'w') as of:
+	with open(outpath+"phased_nodes_colors_" + chromosome+ "_" + haplotype +".csv",'w') as of:
 		of.write("node,color\n")
 		for n in nodes_in_finalpaths:
 			if n in [i for tup in p for i in tup]:

@@ -1,103 +1,169 @@
-chromosomes = {"ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12"}
-haplotypes = {"h1","h2","h3","h4"}
-k = {71}
+configfile: "config.yaml"
+sampleconfig = "../kmer-counting/config_offspring.json"
+samplenumber = config["samplenumber"]
+downsample = config["subset_samples"]
+readgroups = config["readgroups"]
+haplotypes = config["haplotypes"]
+kmers = config["kmers"]
+gfapath = config["gfa_path"]
+gfapath_withseq = config["gfa_path_withseq"]
+dosagepath = config["dosage_path"]
+componentpath = config["component_path"]
+outpath = config["outputpath"]
 
-rule subset_samples:
-	output:
-		'samples.lst'
-	run:
-		import json
-		import random
 
-		conf = open(configfile)
+if downsample:
+	outpath+= str(samplenumber)+"samples/"
+#	kmercountpath = rules.subset_kmercounts.output
+#else:
+#	kmercountpath = "../../allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv" 	
+
+def subset_samples(wildcards):
+	import json
+	import random
+	if not downsample:
+		return(sampleconfig)
+		#TODO or give back kmercountfile here?
+	else:
+		conf = open(sampleconfig)
 		data = json.load(conf)
 		samples = data['data']['samples']  
 
-		subset = random.sample(samples, sample_number)
+		subset = random.sample(samples, int(samplenumber))
 		with open('samples.lst','w') as outf:	
 			outf.write(','.join(subset))			
 		conf.close()
-
-
+	#	return('samples.lst')
+		return(subset)
+		
 rule all:
-	input:
-		"summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
+	input:		
+		expand("clustering_k{k}_subset"+str(samplenumber)+".txt",k = kmers)
 
+#subset the count file
+#TODO or do this as function as well and return either subsetted or original file
+#depending on downsample boolean?
+rule subset_kmercounts:
+	input:
+		kmercounts = "../../allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv"
+	
+	params:
+		s = subset_samples		
+	output:
+		new_kmercounts = "../../allnodes_merged_shortreadcounts_k{k}_filtered_0.1_subset"+str(samplenumber)+".tsv"
+	run:
+		samples = params.s
+		print(samples)				
+
+		with open(input.kmercounts) as kmerfile:
+			for i,l in enumerate(kmerfile):
+				if i == 0:						
+					allsamples = l.strip().split('\t')[2:]
+		indices = []		
+		for i in range(len(allsamples)):
+			if allsamples[i] in samples:
+				indices.append(i)		
+								 
+		with open(output.new_kmercounts, 'w') as outf:	
+			with open(input.kmercounts) as kmerfile:
+				for i,l in enumerate(kmerfile):
+					fields =	l.strip().split('\t')
+					outf.write('\t'.join([fields[0],fields[1]]+[fields[i+2] for i in indices]))
+					outf.write('\n')
+					
 #cluster the nodes into chromosomal clusters
 """
 coverage file has been computed by coverage-analysis snakefile
 """
 rule cluster:
 	input: 
-		path = "spud_altus_hifiasm.r_utg.noseq.components/",
-		dosagefile = "summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv",
-		graph = "spud_altus_hifiasm.r_utg.noseq.gfa",
-		kmercounts = "allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv" 			
+		path = componentpath,
+		dosagefile = dosagepath,
+		graph = gfapath,
+		#kmercounts = "../../allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv"
+		kmercounts = rules.subset_kmercounts.output 			
 	output:
-		"clustering.txt"
-		#TODO output in script
+		"clustering_k{k}_subset"+str(samplenumber)+".txt"
 	shell:
 		"/usr/bin/time python3 cluster_allnodes.py {input.path} {input.dosagefile} {input.graph} {input.kmercounts} {output}"
 
-#not necessary to  mapping to ref chromosomes is a manual step, use readgroups instead (as wildcards)?
+#divide clustering file into smaller ones
+rule split_files:
+	input:
+		clusters = rules.cluster.output
+	output:
+		expand(outpath+"k{{k}}/clustering_{chrom}.txt", chrom = readgroups)
+	shell:
+		"python3 split_files.py {input} {output}"
+		
+
+#phase chromosome clusters into haplotypes		
+rule cluster_phasing:		
+	input:
+		clustering = outpath+"k{k}/clustering_{chrom}.txt",
+		gfapath = componentpath,
+		kmercounts = "../../allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv",
+		dosage = dosagepath
+	params:	
+		prefix = outpath+"k{k}"
+	output:
+		phasing = outpath+"k{k}/clusters_{chrom}_phased.tsv",
+		allnodes = outpath+"k{k}/allnodes_{chrom}.txt"
+	shell:
+		"/usr/bin/time -v python3 cluster_phasing.py {input.clustering} {input.gfapath} {input.kmercounts} {params.prefix} {input.dosage}"
 
 
+#used for bandage coloring and for computing the graph traversals
 rule write_nodes_to_haplo:
 	input:
-		cluster = "readgroup_clusters/clusters_{chrom}_new.tsv"
+		cluster = outpath+"k{k}/clusters_{chrom}_phased.tsv"
 	output:
-		"readgroup_clusters/clusters_{chrom}_new_nodes.csv"		
+		outpath+"k{k}/clusters_{chrom}_nodes.csv"		
 	shell:
 		"/usr/bin/time python3 write_nodes_to_haplotypes.py {input.cluster} {output}"
 
 rule write_haplotype_colors:
 	input:
-		"readgroup_clusters/clusters_{chrom}_new_nodes.csv"
-	shell:
-		"/usr/bin/time python3 write_haplo_colors.py {input}"		 	
-		
-#phase chromosome clusters into haplotypes		
-rule cluster_phasing:		
-	input:
-		gfapath = "spud_altus_hifiasm.r_utg.components/",
-		kmercounts = "allnodes_merged_shortreadcounts_k71_bcalm_filtered_0.1_notangle.tsv",
-		dosage = "summed_altusccs_to_altus_filtered_unique_sequences_5kb.depth-coverage-cns.csv"
-	params:	
-		outpath = "readgroup_clusters/"
+		#rules.write_nodes_to_haplo.output
+		"readgroup_clusters/k{k}/clusters_{chrom}_nodes.csv"
+	params:
+		prefix = outpath+"k{k}/clusters_{chrom}"
 	output:
-		
+		expand(outpath+"k{{k}}/clusters_{{chrom}}_colors_{haplo}.csv", haplo = haplotypes)
 	shell:
-		"/usr/bin/time -v python3 cluster_phasing.py {input.gfapath} {input.kmercounts} {params.outpath} {input.dosage}"
-
+		"/usr/bin/time python3 write_haplo_colors.py {input} {params.prefix}"		 	
+		
 		
 rule add_unphased:
 	input:
-		clusterfile = "readgroup_clusters/clusters_{chrom}_new.tsv",	
-		#written during rule cluster_phasing
-		nodefile = "readgroup_clusters/allnodes_RG{chrom}.txt"		
-	params:
-		chromosome = {chrom}			
+		clusterfile = outpath+"k{k}/clusters_{chrom}_phased.tsv",	
+		allnodes = outpath+"k{k}/allnodes_{chrom}.txt"				
 	output:
-		"readgroup_clusters/clusters_{chrom}_new_withunphased.tsv"
+		outpath+"k{k}/clusters_{chrom}_complete.tsv"
 	shell:
-		"/usr/bin/time -v python3 add_unphased_nodes_tofile.py {params.chromosome} {input.clusterfile} {input.nodefile} {output}"		
+		"/usr/bin/time -v python3 add_unphased_nodes_tofile.py {wildcards.chrom} {input.clusterfile} {input.allnodes} {output}"		
 		
+	
+	
+#TODO error within unitig names (additional ' character) -> for singletons?
 		
 #find graph traversals to assemble haplotigs
 rule thread:
 	input:
-		gfa = "spud_altus_hifiasm.r_utg.gfa",
-		colored_nodes = "readgroup_clusters/clusters_{chrom}_colors_{haplo}.csv",
-		clusterfile = "readgroup_clusters/clusters_{chrom}_new_withunphased.tsv",
+		gfa = gfapath_withseq,
+		colored_nodes = outpath+"k{k}/clusters_{chrom}_colors_{haplo}.csv",
+		clusterfile = outpath+"k{k}/clusters_{chrom}_complete.tsv",
 	params:
 		write_output = False,
-		write_sequence = False	
-	log:
-		'readgroup_clusters/clusters_{chrom}_{haplo}_new-`date +"%Y-%m-%d_%H-%M"`.log'
-	output:
+		write_sequence = False,
+		outpath = outpath+'k{k}/'	
 		
+	log:
+		outpath+'k{k}/clusters_{chrom}_{haplo}-`date +"%Y-%m-%d_%H-%M"`.log'
+	output:
+		outpath+"k{k}/phased_nodes_colors_{chrom}_{haplo}.csv"
 	shell:
-		"/usr/bin/time -v python3 -u write_threaded_paths.py {input.gfa} {input.colored_nodes} {input.clusterfile} {params.write_output} {params.write_sequence} | tee {log}"
+		"/usr/bin/time -v python3 -u write_threaded_paths.py {input.gfa} {input.colored_nodes} {input.clusterfile} {params.write_output} {params.write_sequence} {params.outpath} | tee {log} "
 
 
 		
