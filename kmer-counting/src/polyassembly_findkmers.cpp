@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
 	argparser.add_command("Polyassembly [options] -g <graph.gfa> -a <alignments.gaf>");
 
 	argparser.add_subcommand("find_kmers", {'r', 's', 'k', 'l'},{});
-	argparser.add_subcommand("count_kmers", {'s', 'k', 'c'}, {});
+	argparser.add_subcommand("count_kmers", {'s', 'k', 'c','l'}, {});
 
 	string cmd;
 	cmd = argparser.get_subcommand(argc, argv);
@@ -41,6 +41,7 @@ int main(int argc, char* argv[]) {
 		argparser.add_mandatory_argument('s', "file with short read data, in fastq or fasta format");
 		argparser.add_mandatory_argument('k', "k-mer file to be written to during the k-mer counting");
 		argparser.add_mandatory_argument('c', "outfile for summed up unique k-mer counts in short read sample");	
+		argparser.add_mandatory_argument('l', "k-mer length");
 	}
 
 		try {

@@ -1,12 +1,13 @@
 configfile: "config_offspring.json"
 
 path = "/gpfs/project/projects/medbioinf/data/potato_data/fastq/merged_fastq/"
-k_val = {71}
+k_val = {51}
 
 rule all:
 	input:
-		merged = expand("allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv", k= k_val)
-
+	#	merged = expand("allnodes_merged_shortreadcounts_k{k}_filtered_0.1.tsv", k= k_val)
+		merged = expand("allnodes_merged_shortreadcounts_k{k}.tsv", k= k_val)
+	#	expand()
 
 #rule unzip:
 #	input:
@@ -22,12 +23,12 @@ rule find_kmers:
 	log:
 		"allnodes_k{k}_unique_kmers.log"
 	run:
-		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers find_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s /gpfs/project/serramar/potato-hifi/colomba_bcalm/colomba.unitigs.k71.fasta -k {output} -l {k} |& tee {log}"
+		"/usr/bin/time -v /gpfs/project/serramar/potato-hifi/paper-code/kmer-counting/build/src/polyassembly_findkmers find_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s /gpfs/project/serramar/potato-hifi/colomba_bcalm/colomba.unitigs.k71.fasta -k {output} -l {k} |& tee {log}"
 		 
 		
 rule count_kmers:
 	input:
-		rules.find_kmers.output
+		rules.find_kmers.output	
 	output:
 		"wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{k}.txt"
 	threads: 24
@@ -36,18 +37,18 @@ rule count_kmers:
 	log:
 		"wholegenome_altus_k{k}_unique_counting/logs/allnodes_{sample}_shortreadcounts_k{k}.log"
 	shell:	
-		"/usr/bin/time -v /gpfs/project/serramar/cproject/build/src/polyassembly_findkmers count_kmers -r /gpfs/project/serramar/potato-hifi/altusHifi/altusGFA_270121/spud_altus_hifiasm.r_utg.nodes.fasta -s {params.intermed} -k {input} -c {output} |& tee {log}"
+		"/usr/bin/time -v /gpfs/project/serramar/potato-hifi/paper-code/kmer-counting/build/src/polyassembly_findkmers count_kmers -s {params.intermed} -k {input} -c {output} -l {wildcards.k} |& tee {log}"
 			
 rule merge_countfiles:
 	input:
-		expand("wholegenome_altus_k{k}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{{k}}.txt", sample=config['data']['samples'])
+		expand("wholegenome_altus_k{{k}}_unique_counting/count_files/allnodes_{sample}_shortreadcounts_k{{k}}.txt", sample=config['data']['samples'])
 	params:
 		#path = "wholegenome_altus_k{k}_unique_counting/count_files/",
-		k = {k}
+		# k = {k}
 	output:
 		"allnodes_merged_shortreadcounts_k{k}.tsv"
 	run:
-		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {input} {params.k}"
+		"/usr/bin/time -v python3 merge_countfiles_allnodes.py {output} config['data']['samples'] {input} {wildcards.k}"
 		
 rule find_and_replace:
 	input:
