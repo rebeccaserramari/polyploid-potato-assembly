@@ -1,8 +1,0 @@
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/rebuild_cache.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/edit_cache.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/CMakeFiles/test.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/src/CMakeFiles/edit_cache.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/src/CMakeFiles/test.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/src/CMakeFiles/polyassembly_findkmers.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/src/CMakeFiles/rebuild_cache.dir
-/home/rebecca/work/hifi-potato/paper-code/kmer-counting/build/src/CMakeFiles/PolyassemblyLib.dir
