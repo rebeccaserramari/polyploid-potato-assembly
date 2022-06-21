@@ -10,7 +10,7 @@ Code for assembly approach presented in "Haplotype-resolved assembly of a tetrap
    
    `git clone git@github.com:rebeccaserramari/polyploid-potato-assembly.git`
    
-   `cd polyploid-potato-assembly`
+   `cd polyploid-potato-assembly/kmer-counting`
    
    `mkdir build; cd build; cmake ..; make`
 ####  Running k-mer counting procedure
