@@ -1,16 +1,16 @@
 import sys
 import numpy as np
-from matplotlib import pyplot as plt
-import seaborn as sns
 import pandas as pd
 import copy
 from collections import defaultdict
 
 
 def write_clusters_to_file(clusters, outfile):
+	i = 0
 	with open(outfile, 'w') as outf:
 		for key,nodes in clusters.items():
-			outf.write(str(key)+'\t'+','.join(nodes)+'\n')
+			outf.write(str(i)+'\t'+','.join(nodes)+'\n')
+			i += 1
 
 def print_cluster(clusters):
 	for key, el in clusters.items():
@@ -113,10 +113,7 @@ def compute_clustering(haplo_df, haplo_norm_t):
 	index_to_cluster = defaultdict(list)
 	index_to_nodes = defaultdict(list)
 	
-	#startindex = 2
-	#if not whole column is nan:
-	#possible_starts = [i for i in corr_values.keys() if len([el for el in corr_values[i] if not str(el)=='nan'])>0 and max([el for el in corr_values[i] if not str(el)=='nan'])>0.5]
-	#possible_starts = [i for i in corr_values.keys() if float(max(corr_values[i]))>0.5]
+
 	possible_starts = [i for i in corr_values.keys() if float(max(haplo_corrtable.iloc[:,i]))>0.5]
 	if len(possible_starts) > 0:
 		print("first possible start: ", possible_starts[0])
@@ -131,10 +128,6 @@ def compute_clustering(haplo_df, haplo_norm_t):
 		firstmax = max(corr_values[startindex])
 		testcluster.append(startindex)
 		testcluster.extend(maxlist)
-		#for cur in maxlist:
-		#	col = corr_values[cur]
-		#	testcluster.extend([i for i in range(len(col)) if col[i]>0.5])
-		#	testcluster = list(set(testcluster))
 		
 		index_to_cluster[startindex] =  testcluster
 		clustersets.append(set(testcluster))
@@ -145,7 +138,6 @@ def compute_clustering(haplo_df, haplo_norm_t):
 		is_subset = False
 		for group, sets in grouped_sets.items():
 			#not only common elements, but number of matching elements must be half the size of the set
-			#if len(common) >= 0.5*len(set().union(*sets))     
 			common = cur_set.intersection(set().union(*sets))
 			if len(common) >= (0.9*len(cur_set)):            
 			#if not cur_set.isdisjoint(set().union(*sets)):
@@ -165,10 +157,6 @@ def compute_clustering(haplo_df, haplo_norm_t):
 	print("number of union sets: ", len(union_sets.keys()))
 	print("number of all ids: ", len(all_ids))
     
-	#TODO test
-#	union_sets = {}
-#	for cur in clustersets:
-#		union_sets[tuple(cur)] = tuple(cur)
         
 	#define the number of haplotype clusters (homologous linkage groups)
 	#define clusters where a pair of nodes has high negative correlation
@@ -176,11 +164,9 @@ def compute_clustering(haplo_df, haplo_norm_t):
 	negative_corr = {}
 	positive_corr = {}
 	for k, first in sorted(union_sets.items(), key=lambda kv: (len(kv[1]), kv[0]), reverse=True):
-	#for k, first in sorted(clustersets.items(), key=lambda kv: (len(kv[1]), kv[0]), reverse=True):
 		countfirst += 1
 		countsecond = -1
 		for j, second in sorted(union_sets.items(), key=lambda kv: (len(kv[1]), kv[0]), reverse=True):
-		#for j, second in sorted(clustersets.items(), key=lambda kv: (len(kv[1]), kv[0]), reverse=True):
 			countsecond += 1
 			negative, positive =find_correlation(first, second, haplo_corrtable) 
 			if negative:
@@ -201,7 +187,6 @@ def compute_clustering(haplo_df, haplo_norm_t):
 				print("can be joined: ", countfirst, len(first), " second: ", countsecond, len(second))
 	#assign the small groupsets to the largest clusters
 	merged, visited = merge_clusters(union_sets,negative_corr, positive_corr)
-	#merged, visited = merge_clusters(clustersets,negative_corr, positive_corr)
 	print("merged: ", merged)		
 	print("used in clustering: ", visited)
 	
@@ -222,15 +207,12 @@ def compute_clustering(haplo_df, haplo_norm_t):
 					merged_nodeclusters[ind] =nodeclusters[j]
 		else:
 			if ind not in visited:
-				merged_nodeclusters[ind] = nodeclusters[ind]
-			
+				merged_nodeclusters[ind] = nodeclusters[ind]			
 			
 	print("merged nodeclusters: ",  [(i, len(merged_nodeclusters[i])) for i in merged_nodeclusters.keys()])			
 	
 	largest_merged_nodeclusters = {key:val for (key, val) in sorted(merged_nodeclusters.items(), key=lambda kv: (len(kv[1]), kv[0]), reverse=True)[:4] }
 	
-			
-		
 	remaining = [i for i in corr_values.keys() if not i in all_ids]
 	print("unmapped nodes: ", len(remaining))
 	unmappable = []
@@ -350,66 +332,79 @@ def merge_clusters(union_sets, neg_corr, pos_corr):
 	return(merged, visited)
 
 
-indices_to_merge = [[8, 21, 57, 60, 68, 103, 111]]
-singlenodes = [['utg018065l', 'utg019760l', 'utg019310l', 'utg017238l', 'utg010961l', 'utg009403l', 'utg001713l', 'utg002523l']]
-rg = ['ch10']
+#indices_to_merge = [[8, 21, 57, 60, 68, 103, 111]]
+#singlenodes = [['utg018065l', 'utg019760l', 'utg019310l', 'utg017238l', 'utg010961l', 'utg009403l', 'utg001713l', 'utg002523l']]
+#rg = ['ch10']
 
-gfapath = sys.argv[1]
-kmercountfile =  sys.argv[2]
-outpath =  sys.argv[3]
-cutoff = 0.1
+
+clusterfile = sys.argv[1]
+gfapath = sys.argv[2]
+kmercountfile =  sys.argv[3]
+outpath =  sys.argv[4]
+dosagefile = sys.argv[5]
 if outpath[-1] != '/':
 	outpath += '/'
+
+#read in from file
+with open(clusterfile) as cfile:
+	for i,l in enumerate(cfile):
+		assert(l[0] == '[')
+		#files should contain only one line		
+		assert(i < 1)
+		indices_to_merge = eval(l.split('singletons:')[0])
+		singlenodes = eval(l.strip().split('singletons:')[1])
+readgroup = clusterfile.split('_')[-1].split('.')[0]
+cutoff = 0.1
+
+stats_outfile = outpath+"stats_"+readgroup+'.tsv'
 
 comp_to_phased_lengths = {}
 comp_to_lengths = {}
 component_lengths = {}
-for rg_index in range(len(indices_to_merge)):
-	readgroup = rg[rg_index]	
-	allnodes = []
-	comp_to_phased_lengths[readgroup] = 0
-	comp_to_lengths[readgroup] = 0
-	component_lengths[readgroup] = []
-	for i in indices_to_merge[rg_index]:
-		gfafile = gfapath+'component'+str(i)+'.gfa'
-		with open(gfafile) as gfa:
-			for line in gfa:
-				if line[0] == 'S':
-					node = line.strip().split('\t')[1]
-					allnodes.append(node)
-		print('i, len allnodes: ', i, len(allnodes))
-	print('number of all nodes: ', len(allnodes))
-	print('number of set allnodes: ', len(set(allnodes)))
-	
-	if len(singlenodes) > 0:
-		singletons = singlenodes[rg_index]
-	else:
-		singletons = []
-	print('number of singletons: ', len(singletons))
-	print('number of set singletons: ', len(set(singletons)))
-	allnodes += singletons
-	print('number of set allnodes after adding singletons: ', len(set(allnodes)))
 
-	nodefile = outpath+"allnodes_RG"+str(readgroup)+".txt"
-	with open(nodefile, 'w') as nodef:
-		for n in allnodes:
-			nodef.write(n+',')
-				
-	
-	outfile = outpath + 'shortreadcounts_k71_bcalm_filtered_0.1_RG'+str(readgroup)+'.tsv'
-	nodes_in_countfile = 0
-	with open(outfile, 'w') as outf:
-		with open(kmercountfile) as kmercounts:
-				for i,l in enumerate(kmercounts):
-					parts = l.strip().split('\t')
-					if i == 0:
-						outf.write(l)                        
-					if l[0] == 'u':
-						nodename = parts[0]
-						if nodename in allnodes:
-							nodes_in_countfile += 1
-							outf.write(l)
-print("nodes found in count file: ", nodes_in_countfile)  
+allnodes = []
+comp_to_phased_lengths[readgroup] = 0
+comp_to_lengths[readgroup] = 0
+component_lengths[readgroup] = []
+
+for i in indices_to_merge:
+	if gfapath[-1] == '/':
+		gfafile = gfapath+'component'+str(i)+'.gfa'
+	else:
+		gfapath+= '/'
+		gfafile = gfapath+'component'+str(i)+'.gfa'
+	with open(gfafile) as gfa:
+		for line in gfa:
+			if line[0] == 'S':
+				node = line.strip().split('\t')[1]
+				allnodes.append(node)
+
+
+if len(singlenodes) > 0:
+	singletons = singlenodes
+else:
+	singletons = []
+
+allnodes.extend(singletons)
+
+nodefile = outpath+"allnodes_"+str(readgroup)+".txt"
+with open(nodefile, 'w') as nodef:
+	for n in allnodes:
+		nodef.write(n+',')
+
+outfile = outpath + 'shortreadcounts_k71_bcalm_filtered_0.1_'+str(readgroup)+'.tsv'
+nodes_in_countfile = []
+with open(outfile, 'w') as outf:
+	with open(kmercountfile) as kmercounts:
+			for i,l in enumerate(kmercounts):
+				parts = l.strip().split('\t')
+				if i == 0:
+					outf.write(l)                        
+				if l[0] == 'u':
+					nodename = parts[0]
+					if nodename in allnodes:
+						nodes_in_countfile.append(nodename)
+						outf.write(l)
 
 dosage_file = outfile
 print(dosage_file)
@@ -424,7 +419,7 @@ print("computing correlation")
 corrtable = norm_t.corr(method='spearman')
 print("correlation matrix computed")
 
-dosagefile = sys.argv[4]
+
 haplotigs, diplotigs, triplotigs, tetraplotigs, replotigs = [],[],[],[], []
 nodes = []
 with open(dosagefile) as dosage:
@@ -446,20 +441,11 @@ with open(dosagefile) as dosage:
 			if int(line.strip().split(',')[2]) > 4:
 				replotigs.append(node)
 
-                
-print("nodes: ", len(nodes))				
-print("haplotigs: ", len(haplotigs))
-print("diplotigs: ", len(diplotigs))
-print("triplotigs: ", len(triplotigs))
-print("tetraplotigs: ", len(tetraplotigs))
-print("replotigs: ", len(replotigs))
 
-print("all nodes: ", len(allnodes))
-dosage1_nodes = [node for node in allnodes if node in haplotigs]
-print("dosage 1: ", len(dosage1_nodes))
-#add the nodes that are not in the depth file ( = coverage 0)
-dosage1_nodes.extend([node for node in allnodes if not node in nodes])
-print("dosage 1 after: ", len(dosage1_nodes))
+dosage1_nodes = [node for node in nodes_in_countfile if node in haplotigs]
+dosage2_nodes = [node for node in nodes_in_countfile if node in diplotigs]
+dosage3_nodes = [node for node in nodes_in_countfile if node in triplotigs]
+dosage4_nodes = [node for node in nodes_in_countfile if node in tetraplotigs]
 
 haplotigdf = df.loc[df['node'].isin(dosage1_nodes)]
 haplotignorm = haplotigdf.iloc[:,2:]
@@ -468,6 +454,24 @@ haplotignorm_t = haplotignorm.T
 print("computing correlation")
 corrtable = haplotignorm_t.corr(method='spearman')
 print("correlation matrix computed")
+
+#write stats
+with open(stats_outfile,'w') as stats:
+    stats.write("total length\t"+str(sum(node_to_lengths[n] for n in allnodes)))
+    stats.write('\n')
+    stats.write("phase-informative length\t"+str(sum(node_to_lengths[n] for n in nodes_in_countfile)))
+    stats.write('\n')
+    stats.write("phase-dosage-informative length\t"+str(sum(node_to_lengths[n] for n in nodes_in_countfile if n in nodes)))
+    stats.write('\n')
+    stats.write("dosage1 length\t"+str(sum(node_to_lengths[n] for n in dosage1_nodes)))
+    stats.write('\n')
+    stats.write("dosage2 length\t"+str(sum(node_to_lengths[n] for n in dosage2_nodes)))
+    stats.write('\n')
+    stats.write("dosage3 length\t"+str(sum(node_to_lengths[n] for n in dosage3_nodes)))
+    stats.write('\n')
+    stats.write("dosage4 length\t"+str(sum(node_to_lengths[n] for n in dosage4_nodes)))
+    stats.write('\n')
+
 
 result_clusters = compute_clustering(haplotigdf, haplotignorm_t)
 
@@ -482,23 +486,96 @@ new_clusters = add_higher_dosage_nodes(result_clusters, new_clusters, triplotigs
 new_clusters = add_higher_dosage_nodes(result_clusters, new_clusters, tetraplotigs, df, haplotigdf, haplotignorm_t)
 
 print_cluster(new_clusters)
-
-clusterlist = []
-for key,el in new_clusters.items():
-    clusterlist.append(el)
     
-print("union cluster 1 and 2: ", len(clusterlist[0].intersection(clusterlist[1]))) 
-print("union cluster 1 and 2: ", ','.join(clusterlist[0].intersection(clusterlist[1])))
-print("union cluster 1 and 3: ", len(clusterlist[0].intersection(clusterlist[2]))) 
-print("union cluster 1 and 4: ", len(clusterlist[0].intersection(clusterlist[3])))
-print("union cluster 1 and 4: ", ','.join(clusterlist[0].intersection(clusterlist[3])))
-print("haplotigs in 1 and 4: ", len([i for i in clusterlist[0].intersection(clusterlist[3]) if i in haplotigs]))
-print("haplotigs in 1 and 4: ", ','.join([i for i in clusterlist[0].intersection(clusterlist[3]) if i in haplotigs]))
-print("union cluster 2 and 3: ", len(clusterlist[1].intersection(clusterlist[2]))) 
-print("union cluster 2 and 4: ", len(clusterlist[1].intersection(clusterlist[3]))) 
-print("union cluster 3 and 4: ", len(clusterlist[2].intersection(clusterlist[3]))) 
+#write stats into file before last step of adding unphased nodes to the set
+with open(stats_outfile, 'a') as stats:
+    i=0
+    for n,clus in new_clusters.items():
+        length = sum([lengths[node] for node in clus])
+        stats.write(str(i)+"_before"+"\t"+str(length/1000000)+"Mb")
+        stats.write('\n')
+        i+=1
+"""
+examine which nodes are still unphased:
+1. check which nodes of allnodes are not in one of the clusters
+2. for each of these nodes, compute correlation to the four clusters
+"""
+#allnodes = nodes_in_countfile
+nodes_nocounts = [n for n in allnodes if not n in nodes_in_countfile]
+dosage1_nodes = [node for node in allnodes if node in haplotigs]
 
-cluster_outfile = '/home/rebecca/work/hifi-potato/wholegenome_kmercounts/readgroup_clusters_030222/clusters_'+rg[0]+'.tsv'
+print("nodes in clusters: ", sum([len(val) for key,val in new_clusters.items()]))
+l = [val for key,val in new_clusters.items()]
+nodes_inclusters = list(set.union(*l))
+
+dosage1_remaining = [n for n in dosage1_nodes if n not in nodes_inclusters and n in nodes_in_countfile]
+dosage1_remaining_old = [n for n in dosage1_nodes if not n in nodes_inclusters]
+
+# ^idea: nodes without k-mer counts cannot be recovered
+
+#create dosage1_remaining_tocorrs
+df = pd.read_csv(dosage_file, sep='\t')
+df = df.dropna(axis='columns')
+norm = df.iloc[:,2:]
+norm_t = norm.T
+print("computing correlation")
+corrtable = norm_t.corr(method='spearman')
+print("correlation matrix computed")
+
+dosage1_remaining_to_corrs = {}
+
+for f in corrtable.columns:
+    f_node = df.loc[[f],'node'].values[0]
+    if f_node in dosage1_remaining:
+        if f_node not in dosage1_remaining_to_corrs:
+            dosage1_remaining_to_corrs[f_node] = []
+            values = corrtable.loc[:,f].values
+            nodes = [df.loc[[i],'node'].values[0] for i in corrtable.loc[:,f].index.values]
+            assert(len(values) == len(nodes))
+            for i in range(len(nodes)):
+                pair = (nodes[i], values[i])
+                dosage1_remaining_to_corrs[f_node].append(pair)
+
+#check correlation of dosage1_remaining to the clusters
+
+rem_to_group = {}
+for node in dosage1_remaining:
+    rem_to_group[node] = []
+    for i, clus in new_clusters.items():
+        corr = compute_corr([node], clus, dosage1_remaining_to_corrs) 
+        rem_to_group[node].append((i, corr))
+    el = sorted(rem_to_group[node], key=lambda t:t[1], reverse=True)[:4]   
+    print("node: ", node, node_to_lengths[node], "el: ", el, "diplotig" if node in diplotigs else "triplotig" if node in triplotigs else "tetraplotig")
+    
+    for (n,val) in el[:1]:
+        if val > 1:
+            new_clusters[n].add(node)
+
+print_cluster(new_clusters)
+
+with open(stats_outfile, 'a') as stats:
+    i=0
+    for n,clus in new_clusters.items():
+        length = sum([lengths[node] for node in clus])
+        stats.write(str(i)+"_after"+"\t"+str(length/1000000)+"Mb")
+        stats.write('\n')
+        i+=1           
+
+dosage2_remaining = [n for n in dosage2_nodes if not n in nodes_inclusters and n in nodes_in_countfile]
+print("length of dosage2 nodes remaining: ", len(dosage2_remaining))
+print([(n, str(lengths[n]/1000000)) for n in dosage2_remaining])
+print(sum(lengths[n]/1000000 for n in dosage2_remaining))
+print(sum(lengths[n]/1000000 for n in dosage1_remaining))
+
+with open(stats_outfile, 'a') as stats:
+    stats.write("dos1_remaining length\t"+str(sum(lengths[n]/1000000 for n in dosage1_remaining)))
+    stats.write('\n')
+    stats.write("dos2_remaining length\t"+str(sum(lengths[n]/1000000 for n in dosage2_remaining)))
+    stats.write('\n')
+        
+
+cluster_outfile = outpath+"clusters_"+readgroup+'_phased.tsv'
+
 print(cluster_outfile)
 write_clusters_to_file(new_clusters, cluster_outfile)
 
