@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
 	argparser.add_command("Polyassembly [options] -g <graph.gfa> -a <alignments.gaf>");
 
 	argparser.add_subcommand("find_kmers", {'r', 's', 'k', 'l'},{});
-	argparser.add_subcommand("count_kmers", {'s', 'k', 'c','l'}, {});
+	argparser.add_subcommand("count_kmers", {'s', 'k', 'c', 'l'}, {});
 
 	string cmd;
 	cmd = argparser.get_subcommand(argc, argv);
@@ -59,7 +59,8 @@ int main(int argc, char* argv[]) {
 	kmerfile = argparser.get_arg_parameter('k');
 	countfile = argparser.get_arg_parameter('c');
 	kmerlength = argparser.get_arg_parameter('l');
-
+	string allfile = "";
+	allfile = kmerfile+"_allkmers.txt";
 //	unsigned int k = 71;
 //	unsigned int k = 4;
 	unsigned int k = stoi(kmerlength);
@@ -78,7 +79,7 @@ int main(int argc, char* argv[]) {
 	cout << "kmers in Colomba counted" << endl;
 
 	cout << "query unique Altus kmers not present in Colomba " << endl;
-	countReadKmers.queryFromSequence(readfile, shortReadKmers, kmerfile);
+	countReadKmers.queryFromSequence(readfile, shortReadKmers, kmerfile, allfile);
 
 
 	return(0);

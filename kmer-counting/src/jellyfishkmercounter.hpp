@@ -109,7 +109,7 @@ class JellyfishKmerCounter {
 		uint64_t getKmerCount(std::string kmer);
 		std::vector<jellyfish::mer_dna> dump(uint64_t count);
 		void queryFromSequence(std::string readfile);
-		void queryFromSequence(std::string readfile, JellyfishKmerCounter shortReadKmers, std::string kmerfile);
+		void queryFromSequence(std::string readfile, JellyfishKmerCounter shortReadKmers, std::string kmerfile, std::string allfile);
 		template<typename Database>
 		void query_from_db(std::string readfile, const Database& db, std::string kmerfile);
 		void query_from_sequence_db(std::string readfile, std::string database, std::string kmerfile);

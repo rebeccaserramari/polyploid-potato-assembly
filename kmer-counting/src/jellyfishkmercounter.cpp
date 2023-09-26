@@ -203,7 +203,7 @@ void JellyfishKmerCounter::query_from_db(string readfile, const Database& db, st
 }
 
 
-void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCounter shortReadKmers, string kmerfile) {
+void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCounter shortReadKmers, string kmerfile, string allfile) {
 	vector<char*> readfile_array;
 	readfile_array = stringToChars(readfile);
 	char** file_begin = &readfile_array[0];
@@ -215,6 +215,9 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 	jellyfish::whole_sequence_parser<jellyfish::stream_manager<char**> > parser(4, 100, 1, streams); 
 	ofstream uniquefile;
 	uniquefile.open(kmerfile);
+	ofstream all_uniquefile;
+	all_uniquefile.open(allfile);
+	
 	while(true) {
 		sequence_parser::job j(parser);
 		vector<jellyfish::mer_dna> unique_mers;
@@ -226,8 +229,11 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 			mers = j->data[i].seq;
 			int kmercount = 0;
 			if(mers != mers_end) {
-				if (this->getKmerCount(*mers) == 1) {
-					unique_mers.push_back(*mers);		
+				//if (this->getKmerCount(*mers) == 1) {
+					unique_mers.push_back(*mers);
+					all_uniquefile << ">" << j->data[i].header << "kmer";
+					all_uniquefile << kmercount << "\n";
+					all_uniquefile << *mers << "\n";		
 					if (shortReadKmers.getKmerCount(*mers) == 0) {
 						specific_mers.push_back(*mers);
 						uniquefile << ">" << j->data[i].header << "kmer";
@@ -235,13 +241,16 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 						uniquefile << *mers << "\n";
 						kmercount++;				
 					}	
-				}
+				//}
 				//std::cout << this->getKmerCount(*mers);
 				++mers;
 			}
 			for( ; mers != mers_end; ++mers) {
-				if (this->getKmerCount(*mers) == 1) {
-					unique_mers.push_back(*mers);	
+				//if (this->getKmerCount(*mers) == 1) {
+					unique_mers.push_back(*mers);
+					all_uniquefile << ">" << j->data[i].header << "kmer";
+                                        all_uniquefile << kmercount << "\n";
+                                        all_uniquefile << *mers << "\n";	
 					if (shortReadKmers.getKmerCount(*mers) == 0) {
 						specific_mers.push_back(*mers);	
 						uniquefile << ">" << j->data[i].header << "kmer";
@@ -249,7 +258,7 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 						uniquefile << *mers << "\n";
 						kmercount++;			
 					}		
-				}
+				//}
 			}
 				//std::cout << " " << this->getKmerCount(*mers);
 				//std::cout << "\n";
@@ -258,6 +267,7 @@ void JellyfishKmerCounter::queryFromSequence(string readfile, JellyfishKmerCount
 		cout << "size of specific mers: " << specific_mers.size() << endl;
 	}
 	uniquefile.close();
+	all_uniquefile.close();
 
 }
 
